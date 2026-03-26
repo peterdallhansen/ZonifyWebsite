@@ -1,10 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NewsGrid } from "../components/news-grid";
-import { getNewsPost } from "@/lib/news";
+import { getNewsPost, getNewsPosts } from "@/lib/news";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+
+export async function generateStaticParams() {
+  const posts = getNewsPosts();
+  return posts.map((post) => ({
+    article: post.slug,
+  }));
+}
 
 export async function generateMetadata({
   params,
