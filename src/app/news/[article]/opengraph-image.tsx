@@ -11,7 +11,12 @@ export const contentType = 'image/png';
 export default async function Image({ params }: { params: Promise<{ article: string }> }) {
   const { article } = await params;
   const post = getNewsPost(article);
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zonify.ai';
+  
+  // Dynamic base URL detection for Vercel environments
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL 
+    ? process.env.NEXT_PUBLIC_BASE_URL 
+    : (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://zonify.ai');
+
 
   // Resolve the image URL
   let imageUrl = `${baseUrl}/opengraph-image.jpg`; // Fallback to root OG image
