@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Britti Sans - font files were uploaded under /public/fonts/britti-sans-font-family-1761561563-0 */
+@font-face {
+  font-family: "Britti Sans";
+  src: url("/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-Light-BF6757bfd494951.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Britti Sans";
+  src: url("/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-LightItalic-BF6757bfd48c7c7.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Britti Sans";
+  src: url("/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-Regular-BF6757bfd47ffbf.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Britti Sans";
+  src: url("/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-RegularItalic-BF6757bfd44e013.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Britti Sans";
+  src: url("/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-Semibold-BF6757bfd443a8a.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Britti Sans";
+  src: url("/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-SemiboldItalic-BF6757bfd411c3a.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Britti Sans";
+  src: url("/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-Bold-BF6757bfd4a96ed.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Britti Sans";
+  src: url("/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-BoldItalic-BF6757bfd4a2285.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Body and global font fallback stack */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Britti Sans", "Inter", "Manrope", "Poppins", system-ui,
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
+  padding-top: 90px;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 0%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 201 66% 65%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+    --card: 0 0% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 0 0% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 100%;
+    --primary-foreground: 0 0% 11%;
+    --secondary: 210 4% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 4% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 201 66% 65%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 4% 20%;
+    --input: 210 4% 20%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 201 66% 65%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 10px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Define the fill-animation class to apply the keyframes */
+.fill-animation {
+  animation: fillProgress 5s linear forwards;
+}
