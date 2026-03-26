@@ -10,8 +10,12 @@ import GoogleAnalytics from "@/components/google-analytics";
 import CookieBanner from "@/components/CookieBanner";
 import SmoothScroll from "@/components/SmoothScroll";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL 
+  ? process.env.NEXT_PUBLIC_BASE_URL 
+  : (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://zonify.ai');
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zonify.ai"),
+  metadataBase: new URL(baseUrl),
   title: {
     default: "Zonify.ai | AI-Driven Insights from Every Footstep",
     template: "%s | Zonify.ai",
