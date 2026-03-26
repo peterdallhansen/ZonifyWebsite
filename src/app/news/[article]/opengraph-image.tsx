@@ -2,13 +2,14 @@ import { ImageResponse } from 'next/og';
 import { getNewsPost } from '@/lib/news';
 import fs from 'fs';
 import path from 'path';
+import sharp from 'sharp';
 
 export const alt = 'Zonify.ai News';
 export const size = {
   width: 1200,
   height: 630,
 };
-export const contentType = 'image/png';
+export const contentType = 'image/jpeg';
 
 export default async function Image({ params }: { params: Promise<{ article: string }> }) {
   const { article } = await params;
@@ -45,7 +46,8 @@ export default async function Image({ params }: { params: Promise<{ article: str
     path.join(process.cwd(), 'public/fonts/britti-sans-font-family-1761561563-0/BrittiSansTrial-Regular-BF6757bfd47ffbf.otf')
   );
 
-  return new ImageResponse(
+  // Generate the PNG using ImageResponse
+  const pngResponse = new ImageResponse(
     (
       <div
         style={{
@@ -118,4 +120,17 @@ export default async function Image({ params }: { params: Promise<{ article: str
       ],
     }
   );
+
+  // Post-process the PNG to a compressed JPEG
+  const pngBuffer = await pngResponse.arrayBuffer();
+  const jpegBuffer = await sharp(Buffer.from(pngBuffer))
+    .jpeg({ quality: 80, mozjpeg: true })
+    .toBuffer();
+
+  return new Response(new Uint8Array(jpegBuffer), {
+    headers: {
+      'Content-Type': 'image/jpeg',
+      'Cache-Control': 'public, max-age=31536000, immutable',
+    },
+  });
 }
