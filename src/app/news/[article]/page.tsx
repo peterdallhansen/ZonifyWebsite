@@ -68,6 +68,7 @@ export default async function NewsArticle({
                     src={post.image!}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 896px) 100vw, 896px"
                     className="object-cover"
                     priority
                   />

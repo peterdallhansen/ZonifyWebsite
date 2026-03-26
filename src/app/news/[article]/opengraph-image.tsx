@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { getNewsPost } from '@/lib/news';
 
-export const runtime = 'edge';
 export const alt = 'Zonify.ai News';
 export const size = {
   width: 1200,
