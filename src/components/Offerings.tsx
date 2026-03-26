@@ -199,8 +199,8 @@ export default function Offerings() {
                     {offering.animation ? (
                       <Lottie
                         animationData={offering.animation}
-                        loop={index === activeIndex}
-                        autoplay={index === activeIndex}
+                        loop={true}
+                        autoplay={true}
                         className="h-full w-auto rounded-xl bg-[url('/images/showcase-background-gray.jpg')]"
                         aria-label={offering.alt}
                         role="img"
