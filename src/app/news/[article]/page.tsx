@@ -9,9 +9,10 @@ import ReactMarkdown from "react-markdown";
 export async function generateMetadata({
   params,
 }: {
-  params: { article: string };
+  params: Promise<{ article: string }>;
 }): Promise<Metadata> {
-  const post = getNewsPost(params.article);
+  const { article } = await params;
+  const post = getNewsPost(article);
   if (!post) return {};
 
   return {
@@ -20,12 +21,13 @@ export async function generateMetadata({
   };
 }
 
-export default function NewsArticle({
+export default async function NewsArticle({
   params,
 }: {
-  params: { article: string };
+  params: Promise<{ article: string }>;
 }) {
-  const post = getNewsPost(params.article);
+  const { article } = await params;
+  const post = getNewsPost(article);
 
   if (!post) {
     notFound();

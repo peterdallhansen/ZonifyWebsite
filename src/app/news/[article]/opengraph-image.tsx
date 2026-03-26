@@ -9,8 +9,9 @@ export const size = {
 };
 export const contentType = 'image/png';
 
-export default async function Image({ params }: { params: { article: string } }) {
-  const post = getNewsPost(params.article);
+export default async function Image({ params }: { params: Promise<{ article: string }> }) {
+  const { article } = await params;
+  const post = getNewsPost(article);
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zonify.ai';
 
   // Resolve the image URL
