@@ -5,7 +5,8 @@ import BlurFade from "@/components/ui/blur-fade";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import { useEffect, useMemo, useState } from "react";
 
 // Reuse the same visual assets from the homepage Offerings carousel
@@ -145,7 +146,7 @@ function CoreShowcase() {
                   </AnimatedShinyText>
                 </a>
 
-                <div className={cn("mb-20 overflow-hidden rounded-xl bg-[url('/images/showcase-background-gray.png')] bg-cover")}>
+                <div className={cn("mb-20 overflow-hidden rounded-xl bg-[url('/images/showcase-background-gray.jpg')] bg-cover")}>
                   {section.animation ? (
                     <div className="w-full h-[400px] flex items-center justify-center">
                       <Lottie

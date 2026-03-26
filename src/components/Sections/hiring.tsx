@@ -11,9 +11,9 @@ function Hiring() {
       <BlurFade inView delay={0.2} className="w-full">
         <div className="w-full bg-[#0C0C0C] rounded-2xl p-4 sm:p-6 md:p-12 lg:p-20 flex flex-col md:flex-row relative overflow-hidden gap-6 md:gap-8 items-center">
           <div className="space-y-4 sm:space-y-6 w-full md:w-2/3">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl text-white">
               We're Hiring!
-            </h1>
+            </h2>
             <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl">
               Join our passionate team and help us build amazing products that
               make a difference. We’re looking for creative, driven individuals

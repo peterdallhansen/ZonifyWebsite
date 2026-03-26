@@ -2,7 +2,8 @@
 
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import Image, { type StaticImageData } from "next/image";
 
 import frame102 from "@/public/images/vision-ai-dashboard.png";
@@ -200,8 +201,9 @@ export default function Offerings() {
                         animationData={offering.animation}
                         loop={index === activeIndex}
                         autoplay={index === activeIndex}
-                        className="h-full w-auto rounded-xl bg-[url('/images/showcase-background-gray.png')]"
+                        className="h-full w-auto rounded-xl bg-[url('/images/showcase-background-gray.jpg')]"
                         aria-label={offering.alt}
+                        role="img"
                       />
                     ) : offering.image ? (
                       <Image

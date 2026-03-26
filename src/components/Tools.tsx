@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 type ToolFeature = {
   title: string;
@@ -150,9 +151,9 @@ export default function Tools() {
     <div className="">
       {/* Hero Section */}
       <header className="px-6 py-16 text-center">
-        <h1 className="text-5xl md:text-6xl font-medium tracking-tight text-balance mb-4">
+        <h2 className="text-5xl md:text-6xl font-medium tracking-tight text-balance mb-4">
           Deep spatial insights.
-        </h1>
+        </h2>
         <p className="text-xl md:text-2xl font-normal tracking-tight text-balance text-muted-foreground/80 max-w-3xl mx-auto">
           Powered by your existing cameras.
         </p>
@@ -215,6 +216,7 @@ export default function Tools() {
                     loop={true}
                     autoplay={true}
                     className="w-full h-full object-contain"
+                    role="img"
                   />
                 ) : (
                   <>

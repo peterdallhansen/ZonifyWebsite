@@ -12,9 +12,9 @@ export function FeaturesSection() {
   return (
     <section className="py-10 px-6" id="features">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-normal text-center mb-20 text-balance">
+        <h2 className="text-6xl font-normal text-center mb-20 text-balance">
           Frictionless Setup, Immediate Value
-        </h1>
+        </h2>
         <div className="grid md:grid-cols-3 gap-16">
           {/* Render features from an array */}
           {[

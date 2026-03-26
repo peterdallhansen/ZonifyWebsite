@@ -1,4 +1,3 @@
-"use client";
 
 import { useEffect, useRef, useState } from "react";
 import BlurFade from "../ui/blur-fade";
@@ -6,30 +5,30 @@ import Partners from "./Partners";
 import Image from "next/image";
 
 function Main2() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [videoReady, setVideoReady] = useState(false);
+  // const videoRef = useRef<HTMLVideoElement | null>(null);
+  // const [videoReady, setVideoReady] = useState(false);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+  // useEffect(() => {
+  //   const video = videoRef.current;
+  //   if (!video) return;
 
-    const markReady = () => setVideoReady(true);
+  //   const markReady = () => setVideoReady(true);
 
-    // If the video is already ready from cache/hydration timing, handle it immediately.
-    if (video.readyState >= 2) {
-      setVideoReady(true);
-    }
+  //   // If the video is already ready from cache/hydration timing, handle it immediately.
+  //   if (video.readyState >= 2) {
+  //     setVideoReady(true);
+  //   }
 
-    video.addEventListener("loadeddata", markReady);
-    video.addEventListener("canplay", markReady);
-    video.addEventListener("playing", markReady);
+  //   video.addEventListener("loadeddata", markReady);
+  //   video.addEventListener("canplay", markReady);
+  //   video.addEventListener("playing", markReady);
 
-    return () => {
-      video.removeEventListener("loadeddata", markReady);
-      video.removeEventListener("canplay", markReady);
-      video.removeEventListener("playing", markReady);
-    };
-  }, []);
+  //   return () => {
+  //     video.removeEventListener("loadeddata", markReady);
+  //     video.removeEventListener("canplay", markReady);
+  //     video.removeEventListener("playing", markReady);
+  //   };
+  // }, []);
 
   return (
     <section className="relative mb-20 flex h-screen w-screen flex-col overflow-hidden p-2 pb-0">
@@ -57,8 +56,9 @@ function Main2() {
             alt="Hero Image"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
-            className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover"
+            className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-top"
           />
 
           {/* <div

@@ -48,6 +48,7 @@ export default function Home() {
             playsInline
             ref={videoRef}
             className="w-full rounded-2xl h-auto"
+            aria-label="Product demonstration video"
           >
             <source src="/videos/hero.webm" type="video/webm" />
             <source src="/videos/video_1773312921087.mp4" type="video/mp4" />
@@ -56,6 +57,7 @@ export default function Home() {
           <button
             className="absolute bottom-4 right-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full"
             onClick={toggleVideoPlayback}
+            aria-label={isVideoPlaying ? "Pause video" : "Play video"}
           >
             {isVideoPlaying ? (
               <LucidePause fill="#fff" strokeWidth={0.5} />
@@ -74,7 +76,7 @@ export default function Home() {
 
 <div className="mx-auto container px-6 py-16 md:px-12 md:py-20">
         <div className="flex flex-row justify-between w-full items-center mb-6">
-          <p className="text-2xl font-medium">Latest News</p>
+          <h2 className="text-2xl font-medium">Latest News</h2>
           <a
             href="/news"
             className="inline-flex items-center gap-2 text-primary/80 text-base group"
