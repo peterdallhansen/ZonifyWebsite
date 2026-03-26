@@ -141,10 +141,7 @@ export default function UseCasesPage() {
         })}
       </div>
 
-      {/* CTA section matching the main homepage style */}
-      {/* <section className="w-full pb-20 pt-10 px-4 flex justify-center">
-        <AnalyticsTeaser />
-      </section> */}
+     
     </main>
   );
 }
