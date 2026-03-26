@@ -57,6 +57,7 @@ export default function GoogleAnalytics({
 
               gtag('config', '${GA_MEASUREMENT_ID}', {
                   page_path: window.location.pathname,
+                  send_page_view: false
               });
               `,
         }}

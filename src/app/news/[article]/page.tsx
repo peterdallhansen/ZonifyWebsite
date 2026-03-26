@@ -2,8 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { NewsGrid } from "../components/news-grid";
 import { getNewsPost } from "@/lib/news";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { article: string };
+}): Promise<Metadata> {
+  const post = getNewsPost(params.article);
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.content.substring(0, 160).replace(/[#*`]/g, ""),
+  };
+}
 
 export default function NewsArticle({
   params,
