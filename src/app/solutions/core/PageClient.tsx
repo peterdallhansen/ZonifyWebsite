@@ -26,7 +26,7 @@ const highlights: SolutionHighlight[] = [
     title: "Zero Hardware Investment",
     description:
       "Eliminate new capex. We connect directly to your existing 2D cameras, transforming what you already own into a powerful analytics network.",
-    link: "/solutions/integration",
+    link: "/integrations",
     linkText: "See Integration Options",
   },
   {
@@ -93,7 +93,7 @@ const sections: SolutionSection[] = [
   {
     id: "privacy-compliance",
     title: "Privacy & Compliance",
-    body: "Privacy is not a feature bolt-on - it is the architectural foundation. Zonify processes video data through a GDPR-by-design pipeline: anonymization within milliseconds, no facial recognition, no biometric data, encryption at rest and in transit, role-based access controls, complete audit trails, and regional data residency options. Every safeguard is documented and ready for review.",
+    body: "Privacy is not a feature bolt-on - it is the architectural foundation. Zonify.ai processes video data through a GDPR-by-design pipeline: anonymization within milliseconds, no facial recognition, no biometric data, encryption at rest and in transit, role-based access controls, complete audit trails, and regional data residency options. Every safeguard is documented and ready for review.",
     cta: "Read our compliance overview",
     href: "/compliance",
     visual: {
@@ -123,12 +123,12 @@ export default function PageClient() {
     <SolutionPage
       label="Core Platform"
       title="Turn your cameras into intelligence"
-      description="Zonify transforms your existing 2D camera infrastructure into a privacy-first analytics engine - delivering real-time visitor behavior, demographic profiling, and spatial intelligence without deploying new hardware."
+      description="Zonify.ai transforms your existing 2D camera infrastructure into a privacy-first analytics engine - delivering real-time visitor behavior, demographic profiling, and spatial intelligence without deploying new hardware."
       currentPath="/solutions/core"
       heroVisual={{
         type: "image",
         src: frame103,
-        alt: "Zonify Core Platform dashboard",
+        alt: "Zonify.ai Core Platform dashboard",
         sizes: "(max-width: 768px) 100vw, 1400px",
         priority: true,
       }}

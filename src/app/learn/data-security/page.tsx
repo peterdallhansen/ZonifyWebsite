@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Data Security | Zonify.ai",
   description:
-    "How Zonify handles your data — anonymization, GDPR compliance, encryption, and access controls built in from the ground up.",
+    "How Zonify.ai handles your data — anonymization, GDPR compliance, encryption, and access controls built in from the ground up.",
 };
 
 const sections = [
@@ -13,7 +13,7 @@ const sections = [
     label: "Anonymization & No Facial Recognition",
     title: "We never collect personal data. There is nothing to expose.",
     description:
-      "Zonify does not capture, store, or transmit images of individuals. Video is processed locally and immediately converted into anonymous behavioral data points — no faces, no identities, no biometrics. Because no personal data is collected at any stage, your organization's GDPR exposure is minimal by design. There is no facial recognition in the platform, and there is no configuration that enables it.",
+      "Zonify.ai does not capture, store, or transmit images of individuals. Video is processed locally and immediately converted into anonymous behavioral data points — no faces, no identities, no biometrics. Because no personal data is collected at any stage, your organization's GDPR exposure is minimal by design. There is no facial recognition in the platform, and there is no configuration that enables it.",
     details: [
       { label: "Personal data collected", value: "None" },
       { label: "Facial recognition", value: "Not present in platform" },
@@ -28,7 +28,7 @@ const sections = [
     label: "GDPR & Compliance",
     title: "Designed to minimize your compliance obligations.",
     description:
-      "Because Zonify processes only anonymized, aggregated data, it falls outside the scope of most personal data obligations under GDPR. Your legal team will not need to establish a complex processing basis, appoint a data processor relationship for sensitive personal data, or manage data subject access requests relating to Zonify data. We support regional data residency to satisfy local legal requirements, and our processing architecture is documented and available for legal review.",
+      "Because Zonify.ai processes only anonymized, aggregated data, it falls outside the scope of most personal data obligations under GDPR. Your legal team will not need to establish a complex processing basis, appoint a data processor relationship for sensitive personal data, or manage data subject access requests relating to Zonify.ai data. We support regional data residency to satisfy local legal requirements, and our processing architecture is documented and available for legal review.",
     details: [
       { label: "GDPR classification", value: "Anonymized data only" },
       { label: "Data subject rights exposure", value: "Minimal" },
@@ -43,7 +43,7 @@ const sections = [
     label: "Encryption & Infrastructure",
     title: "Your data is protected end to end — in transit and at rest.",
     description:
-      "All data transmitted through the Zonify platform is encrypted in transit. Stored data is encrypted at rest. Our cloud infrastructure operates with a documented availability SLA and a service-credit mechanism, so your procurement team has contractual recourse for downtime. For organizations with stricter requirements, on-premises deployment is available — keeping all data and processing entirely within your own infrastructure and jurisdiction.",
+      "All data transmitted through the Zonify.ai platform is encrypted in transit. Stored data is encrypted at rest. Our cloud infrastructure operates with a documented availability SLA and a service-credit mechanism, so your procurement team has contractual recourse for downtime. For organizations with stricter requirements, on-premises deployment is available — keeping all data and processing entirely within your own infrastructure and jurisdiction.",
     details: [
       { label: "Data in transit", value: "Encrypted" },
       { label: "Data at rest", value: "Encrypted" },
@@ -58,7 +58,7 @@ const sections = [
     label: "Access Controls & Audit",
     title: "Documented controls your compliance team can rely on.",
     description:
-      "Zonify provides role-based access controls, full audit logging, and configurable permissions for internal teams and external stakeholders. Every access event is logged and traceable, giving your compliance and legal teams the evidence trail required for internal governance reviews and regulatory inquiries. Access rights can be scoped tightly to specific sites, data types, and reporting functions — nothing broader than necessary.",
+      "Zonify.ai provides role-based access controls, full audit logging, and configurable permissions for internal teams and external stakeholders. Every access event is logged and traceable, giving your compliance and legal teams the evidence trail required for internal governance reviews and regulatory inquiries. Access rights can be scoped tightly to specific sites, data types, and reporting functions — nothing broader than necessary.",
     details: [
       { label: "Access model", value: "Role-based (RBAC)" },
       { label: "Audit trail", value: "Full, exportable logs" },
@@ -84,10 +84,10 @@ export default function DataSecurityPage() {
               No personal data. No compliance headache.
             </h1>
             <p className="mt-6 text-lg text-gray-500 max-w-xl leading-relaxed">
-              Zonify collects no personal data, performs no facial recognition,
-              and is designed from the ground up to minimize your organization's
-              compliance obligations. Here is what your legal and procurement
-              teams need to know.
+              Zonify.ai collects no personal data, performs no facial
+              recognition, and is designed from the ground up to minimize your
+              organization's compliance obligations. Here is what your legal and
+              procurement teams need to know.
             </p>
           </div>
         </section>

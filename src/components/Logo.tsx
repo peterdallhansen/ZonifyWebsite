@@ -25,7 +25,7 @@ const Logo: React.FC<Props> = ({
           src={lightLogo}
           width={width}
           height={height}
-          alt="Zonify Logo Light"
+          alt="Zonify.ai Logo Light"
           className="object-contain"
           style={{ width: `${width}px`, height: "auto" }}
           priority
@@ -36,7 +36,7 @@ const Logo: React.FC<Props> = ({
           src={darkLogo}
           width={width}
           height={height}
-          alt="Zonify Logo Dark"
+          alt="Zonify.ai Logo Dark"
           className="object-contain"
           style={{ width: `${width}px`, height: "auto" }}
           priority
@@ -49,7 +49,7 @@ const Logo: React.FC<Props> = ({
             src={lightLogo}
             width={width}
             height={height}
-            alt="Zonify Logo Light"
+            alt="Zonify.ai Logo Light"
             className="object-contain block dark:hidden"
             style={{ width: `${width}px`, height: "auto" }}
             priority
@@ -59,7 +59,7 @@ const Logo: React.FC<Props> = ({
             src={darkLogo}
             width={width}
             height={height}
-            alt="Zonify Logo Dark"
+            alt="Zonify.ai Logo Dark"
             className="object-contain hidden dark:block"
             style={{ width: `${width}px`, height: "auto" }}
             priority

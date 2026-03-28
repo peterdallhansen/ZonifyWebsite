@@ -31,7 +31,7 @@ export function FeaturesSection() {
               description:
                 "Eliminate new capex projects. We connect directly to your existing 2D camera infrastructure, transforming what you already own into a powerful analytics network.",
               icon: LucideVideo,
-              link: "/contact",
+              link: "/integrations",
               linkText: "See Integration Options",
             },
             {
@@ -39,8 +39,8 @@ export function FeaturesSection() {
               description:
                 "Stay fully GDPR-compliant with zero friction. Data is anonymized in milliseconds with absolutely no biometric data stored or facial recognition used.",
               icon: LucideShieldCheck,
-              link: "/security",
-              linkText: "Read Security Whitepaper",
+              linkText: "Read our data security overview",
+              href: "/learn/data-security",
             },
           ].map((feature, idx) => {
             const Icon = feature.icon;
@@ -56,10 +56,10 @@ export function FeaturesSection() {
                 <a
                   href={
                     idx === 0
-                      ? "/solutions/analytics-hub"
+                      ? "/deployment"
                       : idx === 1
-                        ? "/contact"
-                        : "/security"
+                        ? "/integrations"
+                        : "/learn/data-security"
                   }
                   className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all"
                 >
@@ -67,7 +67,7 @@ export function FeaturesSection() {
                     ? "Explore Use Cases"
                     : idx === 1
                       ? "See Integration Options"
-                      : "Read Security Whitepaper"}{" "}
+                      : "Read our data security overview"}{" "}
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

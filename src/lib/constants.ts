@@ -110,7 +110,7 @@ export const navigation: NavSection[] = [
         links: [
           {
             label: "Data Integrations",
-            href: "/solutions/integration",
+            href: "/integrations",
             description: "Seamless connectivity with systems.",
             subtitle: "Plug in. Sync data. Get insights fast.",
             longDescription:

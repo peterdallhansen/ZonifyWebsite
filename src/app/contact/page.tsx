@@ -85,7 +85,7 @@ ${message}
           <div>
             <label className="block text-sm font-medium mb-1.5">Name</label>
             <Input
-              className="w-full rounded-md border px-3 py-2 h-10 sm:h-11"
+              className="w-full rounded-md border shadow-none px-3 py-2 h-10 sm:h-11"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -96,7 +96,7 @@ ${message}
             <label className="block text-sm font-medium mb-1.5">Email</label>
             <Input
               type="email"
-              className="w-full rounded-md border px-3 py-2 h-10 sm:h-11"
+              className="w-full rounded-md border shadow-none px-3 py-2 h-10 sm:h-11"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -106,7 +106,7 @@ ${message}
           <div>
             <label className="block text-sm font-medium mb-1.5">Subject</label>
             <Input
-              className="w-full rounded-md border px-3 py-2 h-10 sm:h-11"
+              className="w-full rounded-md border shadow-none px-3 py-2 h-10 sm:h-11"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               required
@@ -116,7 +116,7 @@ ${message}
           <div>
             <label className="block text-sm font-medium mb-1.5">Message</label>
             <Textarea
-              className="w-full rounded-md border px-3 py-2 h-32 sm:h-40"
+              className="w-full rounded-md border shadow-none px-3 py-2 h-32 sm:h-40"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required

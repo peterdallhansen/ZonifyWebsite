@@ -22,7 +22,7 @@ Across its public pages, Zonify.ai describes a platform that converts ordinary 2
 
 | **Layer**          | **Public label**                | **Sales meaning**                                                                                                                |
 | ------------------ | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Capture layer      | Zonify Core                     | AI-powered anonymization, demographic profiling, behavior tracking, and benchmarking on top of existing infrastructure.          |
+| Capture layer      | Zonify.ai Core                  | AI-powered anonymization, demographic profiling, behavior tracking, and benchmarking on top of existing infrastructure.          |
 | Operating layer    | Analytics Hub                   | A decision-maker workspace for live monitoring, historical trends, workspaces, filters, access control, and scheduled reporting. |
 | Insight layer      | AI-Powered BI                   | Natural-language querying, context around anomalies, and proactive surfacing of insights instead of dashboard-only analysis.     |
 | Optimization layer | Predictive tools / digital twin | Forecasting and scenario-style analysis to help customers plan staffing, layout, traffic, and operations.                        |

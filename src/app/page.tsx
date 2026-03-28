@@ -59,7 +59,7 @@ export default function Home() {
             PLACEHOLDER
           </p>
           <button
-            className="absolute bottom-4 right-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full"
+            className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 rounded-full"
             onClick={toggleVideoPlayback}
             aria-label={isVideoPlaying ? "Pause video" : "Play video"}
           >

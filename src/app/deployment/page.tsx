@@ -5,7 +5,7 @@ import { Check, Link } from "lucide-react";
 export const metadata: Metadata = {
   title: "Deployment | Zonify.ai",
   description:
-    "Deploy Zonify on your terms — in the cloud or on your own infrastructure. Same platform, same insights, full control over where your data lives.",
+    "Deploy Zonify.ai on your terms — in the cloud or on your own infrastructure. Same platform, same insights, full control over where your data lives.",
 };
 
 const deploymentOptions = [
@@ -15,7 +15,7 @@ const deploymentOptions = [
     href: "/deployment#cloud",
     tagline: "Up and running in days, not months.",
     summary:
-      "Zonify manages the infrastructure. You get the insights. Our cloud deployment runs on top of your existing cameras with no servers to install, no hardware to maintain, and no IT overhead. Remote onboarding means your first site can be live within days.",
+      "Zonify.ai manages the infrastructure. You get the insights. Our cloud deployment runs on top of your existing cameras with no servers to install, no hardware to maintain, and no IT overhead. Remote onboarding means your first site can be live within days.",
     bestFor:
       "Multi-site operators, fast-growing networks, teams without dedicated IT.",
     specs: [
@@ -35,7 +35,7 @@ const deploymentOptions = [
       "GDPR-compliant by design, zero facial recognition",
     ],
     proof:
-      "Zonify remotely onboarded a 40,000 m² shopping center across 50+ cameras — without a single on-site visit.",
+      "Zonify.ai remotely onboarded a 40,000 m² shopping center across 50+ cameras — without a single on-site visit.",
     image: "/images/unsplash/cloudsolution.jpg",
 
     imageAlt: "Cloud processing infrastructure diagram",
@@ -46,7 +46,7 @@ const deploymentOptions = [
     href: "/deployment#onprem",
     tagline: "Full control. Data never leaves your walls.",
     summary:
-      "For organizations where data residency, air-gapped networks, or internal security policy require processing to happen on-site, Zonify deploys directly onto your own server infrastructure. Same platform capabilities, same analytics quality — on your terms.",
+      "For organizations where data residency, air-gapped networks, or internal security policy require processing to happen on-site, Zonify.ai deploys directly onto your own server infrastructure. Same platform capabilities, same analytics quality — on your terms.",
     bestFor:
       "Airports, public sector, regulated environments, and organizations with strict data governance requirements.",
     specs: [

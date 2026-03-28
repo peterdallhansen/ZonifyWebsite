@@ -125,7 +125,7 @@ export default function AnalyticsTeaser() {
             <div className="relative h-[200px] sm:h-[250px] md:h-[400px] lg:h-[700px]">
               <Image
                 src="/images/dashboardPreview.png"
-                alt="Zonify analytics dashboard with interactive maps and smart filtering"
+                alt="Zonify.ai analytics dashboard with interactive maps and smart filtering"
                 fill
                 priority
                 className="object-contain md:object-cover object-center md:object-left-top"

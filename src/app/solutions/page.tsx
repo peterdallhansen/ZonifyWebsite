@@ -1,83 +1,92 @@
-import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import BlurFade from "@/components/ui/blur-fade";
 import { solutions } from "@/lib/constants";
-import { cn } from "@/lib/utils";
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Metadata } from "next";
+import { cn } from "@/lib/utils";
+
 export const metadata: Metadata = {
   title: "Solutions",
+  description:
+    "The full Zonify platform — from real-time analytics and AI querying to predictive tools, digital twins, and seamless data integrations.",
 };
 
-function Page() {
+export default function Page() {
   return (
-    <main className="min-h-screen bg-background antialiased w-full mx-auto scroll-smooth flex flex-col overflow-hidden items-center pt-40 px-2">
-      <BlurFade delay={0.25} inView>
-        <h4 className="text-sm md:text-lg text-primary text-center">
-          Solutions
-        </h4>
-      </BlurFade>
-      <BlurFade delay={0.3} inView>
-        <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold mb-2 leading-tight text-center  text-primary">
-          Discover solutions designed for your industry needs
-        </h2>
-      </BlurFade>
+    <main className="bg-white text-gray-800">
+      <div className="mx-auto grid max-w-[2000px] gap-16 px-5 md:px-8 pb-16">
+        {/* Hero */}
+        <section className="mt-40 md:mt-52 grid grid-cols-8 gap-4">
+          <div className="col-span-8 md:col-span-6">
+            <BlurFade delay={0.1} inView>
+              <h1 className="text-4xl md:text-7xl font-medium leading-[1.05] tracking-[-0.03em]">
+                One platform. Every insight.
+              </h1>
+            </BlurFade>
+            <BlurFade delay={0.2} inView>
+              <p className="mt-6 text-lg text-gray-500 max-w-xl leading-relaxed">
+                From live visitor analytics to AI-powered querying and
+                predictive forecasting — everything your organization needs to
+                understand and act on spatial data, built into a single
+                connected platform.
+              </p>
+            </BlurFade>
+          </div>
+        </section>
 
-      <div className="space-y-32 mt-20 container">
-        {solutions.map((solution, index) => (
-          <div
-            key={solution.label}
-            className={`flex flex-col ${
-              index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-            } gap-8 lg:gap-16`}
-          >
-            <div className="lg:w-1/2 space-y-4">
-              <BlurFade delay={0.2} inView>
-                <h2 className="text-2xl md:text-3xl font-bold text-primary">
-                  {solution.label}
-                </h2>
-              </BlurFade>
+        {/* Rows */}
+        <section>
+          <div className="grid grid-cols-8">
+            {solutions.map((solution, index) => (
+              <BlurFade
+                key={index}
+                delay={0.05 * index}
+                inView
+                className="col-span-8 grid grid-cols-subgrid gap-4"
+              >
+                <div className="col-span-8 grid grid-cols-subgrid gap-4 border-t border-gray-300 py-8 md:py-10 scroll-m-20">
+                  {/* LEFT TEXT */}
+                  <div className="col-span-full flex flex-col gap-4 md:col-span-4 xl:col-span-2">
+                    <p className="text-xs font-medium uppercase tracking-widest text-gray-400">
+                      {solution.description}
+                    </p>
 
-              <BlurFade delay={0.3} inView>
-                <p className="text-primary/80 max-w-xl">
-                  {solution.longDescription}
-                </p>
-              </BlurFade>
+                    <h2 className="text-xl md:text-2xl font-medium">
+                      {solution.label}
+                    </h2>
 
-              <BlurFade delay={0.4} inView>
-                <a
-                  href={solution.href}
-                  className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
-                >
-                  <AnimatedShinyText className="inline-flex items-center py-2 transition ease-out text-primary">
-                    <span>Go to Page</span>
+                    <p className="text-md text-gray-600 leading-relaxed">
+                      {solution.longDescription}
+                    </p>
 
-                    <ChevronRight className="ml-1 size-4" />
-                  </AnimatedShinyText>
-                </a>
-              </BlurFade>
-            </div>
+                    <a
+                      href={solution.href}
+                      className="text-sm text-gray-900 flex items-center gap-1 group mt-1"
+                    >
+                      Explore {solution.label}
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
+                    </a>
+                  </div>
 
-            <div className="lg:w-1/2 rounded-lg overflow-hidden">
-              <BlurFade delay={0.5} inView>
-                <div className="relative aspect-[4/4] w-full">
-                  <Image
-                    src={solution.image || "/placeholder.svg"}
-                    alt={solution.label}
-                    fill
-                    quality={100}
-                    className={cn(
-                      solution.imageClassName ?? "object-cover bg-gray-100"
-                    )}
-                  />
+                  {/* RIGHT IMAGE */}
+                  <div className="col-span-full md:col-span-4 md:col-start-5">
+                    <div className="relative w-full min-h-[320px] overflow-hidden rounded-lg md:min-h-[520px]">
+                      <Image
+                        src={solution.image || "/images/placeholder.png"}
+                        alt={solution.label}
+                        fill
+                        className={cn("object-cover", solution.imageClassName)}
+                        sizes="(max-width: 767px) 100vw, 50vw"
+                      />
+                    </div>
+                  </div>
                 </div>
               </BlurFade>
-            </div>
+            ))}
           </div>
-        ))}
+        </section>
       </div>
     </main>
   );
 }
-
-export default Page;

@@ -45,7 +45,9 @@ export default function TenantAppTeaser() {
           </BlurFade>
           <BlurFade delay={0.2}>
             <p className="text-lg md:text-xl text-primary/60 max-w-2xl mx-auto">
-              Give retailers the actionable footfall insights they need to succeed, while effortlessly automating your mall's POS data collection.
+              Give retailers the actionable footfall insights they need to
+              succeed, while effortlessly automating your mall's POS data
+              collection.
             </p>
           </BlurFade>
         </div>
@@ -73,11 +75,17 @@ export default function TenantAppTeaser() {
           </div>
 
           {/* Center Image */}
-          <BlurFade delay={0.4} className="flex-shrink-0 relative z-10 w-full max-w-md lg:max-w-sm xl:max-w-lg">
-            <div className="relative w-full aspect-[4/5]" style={{ position: "relative" }}>
+          <BlurFade
+            delay={0.4}
+            className="flex-shrink-0 relative z-10 w-full max-w-md lg:max-w-sm xl:max-w-lg"
+          >
+            <div
+              className="relative w-full aspect-[4/5]"
+              style={{ position: "relative" }}
+            >
               <Image
                 src="/images/zonify-tenant-mobile-app.png"
-                alt="Zonify Tenant App Mobile View"
+                alt="Zonify.ai Tenant App Mobile View"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 className="object-contain"

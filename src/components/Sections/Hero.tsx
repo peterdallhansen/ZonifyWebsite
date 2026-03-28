@@ -85,11 +85,13 @@ function Hero() {
             </BlurFade>
           </div>
           <div className="absolute right-8 bottom-8 max-w-[470px] backdrop-blur-sm rounded-lg p-4 rounded-lg text-lg text-white text-balance">
-            <h2>
-              → Your on-demand spatial intelligence layer. Understand visitor
-              flows, optimize operations, and empower your team to make
-              data-driven decisions with confidence.
-            </h2>
+            <BlurFade delay={0.2} inView>
+              <h2>
+                → Your AI-powered spatial intelligence layer. Understand visitor
+                flows, optimize operations, and empower your team to make
+                data-driven decisions with confidence.
+              </h2>
+            </BlurFade>
           </div>
         </div>
       </div>

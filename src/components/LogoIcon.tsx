@@ -21,7 +21,7 @@ const LogoIcon: React.FC<Props> = ({
         src={logoSrc}
         width={width}
         height={height}
-        alt="Zonify Logo"
+        alt="Zonify.ai Logo"
         className="object-contain"
         priority
       />
