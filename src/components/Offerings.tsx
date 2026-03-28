@@ -12,6 +12,7 @@ import TenantLeaseReport from "@/public/images/automated-reporting-suite.png";
 import CustomerJourneySankeyChart from "@/public/images/customer-journey-analytics.png";
 
 import DataAssistantAgent from "@/public/animations/SearchAnim3.json";
+import ResizeZone from "@/public/animations/ResizeZone.json";
 import researchAnim2 from "@/public/animations/Research3.json";
 import loadingResearchAnim from "@/public/animations/LoadingResearch.json";
 import widgetAnim from "@/public/animations/Widget2.json";
@@ -37,7 +38,7 @@ const keyPoints: Offering[] = [
     id: "analytics-1",
     title:
       "Measure dwell time, footfall, and engagement across any defined area",
-    image: MeasureZoneOverlay,
+    animation: ResizeZone,
     alt: "AI-powered zone analytics dashboard with live visitor data",
   },
   {

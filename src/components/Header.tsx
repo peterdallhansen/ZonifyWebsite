@@ -13,6 +13,9 @@ import MobileMenu from "./Header/MobileMenu";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
+  const topNavHeight = 64;
+  const maxSublinkRows = 8;
+
   const pathname = usePathname();
   const isHome = ["/", "/news"].includes(pathname);
 
@@ -69,12 +72,13 @@ export default function Header() {
 
   // Calculates height for dynamic dropdown expansion
   const getHeaderHeight = () => {
-    if (!isHovering || !currentHoverData?.sublinkGroups) return 60;
+    if (!isHovering || !currentHoverData?.sublinkGroups) return topNavHeight;
     const groups = currentHoverData.sublinkGroups;
     const maxLinksInGroup = Math.max(...groups.map((g) => g.links.length));
     const rows = Math.ceil(groups.length / 3);
-    const rowHeight = 36 * (maxLinksInGroup + 1);
-    return 60 + 40 + rows * rowHeight; // TopNav + padding + Rows
+    const visibleLinkRows = Math.min(maxLinksInGroup, maxSublinkRows);
+    const rowHeight = 36 * (visibleLinkRows + 1);
+    return topNavHeight + 40 + rows * rowHeight; // TopNav + padding + Rows
   };
 
   return (
@@ -83,11 +87,11 @@ export default function Header() {
         {showHeader && (
           <motion.header
             key="site-header"
-            className="fixed top-0 z-50 w-screen px-3 overflow-hidden text-white"
+            className="fixed top-0 z-50 w-screen px-4 overflow-hidden text-white"
             initial={{
               y: -100,
               opacity: 0,
-              height: 60,
+              height: topNavHeight,
               backgroundColor: "rgba(0,0,0,0)",
             }}
             animate={{
@@ -105,7 +109,10 @@ export default function Header() {
             transition={{ duration: 0.2, ease: "easeInOut" }}
             onMouseLeave={onHoverEnd}
           >
-            <div className="grid grid-cols-2 md:grid-cols-3 items-center mx-auto px-4 h-[64px]">
+            <div
+              className="grid grid-cols-2 md:grid-cols-3 items-center mx-auto px-4"
+              style={{ height: topNavHeight }}
+            >
               {/* Left: Logo */}
               <div className="justify-self-start">
                 <Logo variant="dark" />
@@ -113,7 +120,10 @@ export default function Header() {
 
               {/* Center: Desktop Navigation */}
               {!isMobile && (
-                <nav className="justify-self-center flex items-center gap-8 h-[60px]">
+                <nav
+                  className="justify-self-center flex items-center gap-8"
+                  style={{ height: topNavHeight }}
+                >
                   {navigation.map((link) => (
                     <div
                       key={link.label}
@@ -143,7 +153,10 @@ export default function Header() {
                 {isMobile ? (
                   <MobileMenu />
                 ) : (
-                  <div className="flex items-center h-[60px]">
+                  <div
+                    className="flex items-center"
+                    style={{ height: topNavHeight }}
+                  >
                     <Link href="/contact">
                       <Button
                         variant="link"
@@ -169,7 +182,8 @@ export default function Header() {
             <AnimatePresence>
               {isHovering && currentHoverData?.sublinkGroups && (
                 <motion.div
-                  className="absolute left-0 right-0 top-[60px] w-full pt-8 pb-12"
+                  className="absolute left-0 right-0 w-full pt-8 pb-12"
+                  style={{ top: topNavHeight }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -182,7 +196,12 @@ export default function Header() {
                           <h3 className="text-xs text-white/60 mb-2">
                             {group.title}
                           </h3>
-                          <ul className="space-y-3">
+                          <ul
+                            className="grid grid-flow-col auto-cols-max gap-x-10 gap-y-3"
+                            style={{
+                              gridTemplateRows: `repeat(${maxSublinkRows}, minmax(0, max-content))`,
+                            }}
+                          >
                             {group.links.map((sublink) => {
                               const isExternal = sublink.external;
                               return (
