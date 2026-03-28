@@ -120,7 +120,11 @@ export const navigation: NavSection[] = [
             imageClassName: "object-contain scale-[1.5] md:scale-[1]",
           },
           { label: "Cloud Processing", href: "/deployment/cloud", icon: Cloud },
-          { label: "On-Premises Server", href: "/deployment/onprem", icon: Server },
+          {
+            label: "On-Premises Server",
+            href: "/deployment/onprem",
+            icon: Server,
+          },
         ],
       },
     ],
@@ -129,70 +133,69 @@ export const navigation: NavSection[] = [
     label: "Use Cases",
     sublinkGroups: [
       {
-        title: "Industries We Serve",
+        title: "By Industry",
         links: [
           {
-            label: "Shopping Centers & Retail",
-            href: "/industries/retail",
-            description: "Real-time Customer Insights",
+            label: "Shopping Centers",
+            href: "/industries#shopping-centers",
+            description: "The Industry We Were Built For",
             longDescription:
-              "Leverage advanced footfall analytics and AI-driven BI to monitor visitor behavior, optimize store layouts, and tailor marketing strategies for increased profitability.",
-            caseExample: "Go to Page",
-            image: "/images/unsplash/clothes.jpg",
-            icon: ShoppingCart,
+              "Give leasing teams, center managers, retailers, marketers, and investors a shared spatial intelligence layer backed by verified visitor behavior across the asset.",
+            caseExample: "View industry",
+            image: "/images/tenant-occupancy-map.png",
+            icon: Building,
           },
 
           {
-            label: "Shopping Centers",
-            href: "/industries/malls",
-            description: "Instant Operational Views",
+            label: "Retail Chains",
+            href: "/industries#retail-chains",
+            description: "Every Store. One View.",
             longDescription:
-              "Unlock comprehensive shopping center analytics with real-time visitor tracking, tenant performance monitoring, and predictive insights to optimize operations and enhance tenant mix.",
-            caseExample: "Case example",
-            image: "/images/unsplash/center.jpg",
-            icon: Building,
+              "Benchmark performance across every location, understand layout effectiveness, and plan staffing with comparable analytics from your existing camera network.",
+            caseExample: "View industry",
+            image: "/images/analytics-hub-preview.png",
+            icon: ShoppingCart,
           },
           {
-            label: "Leisure",
-            href: "/industries/leisure",
-            description: "Engage Visitors & Enhance Experiences",
+            label: "Leisure & Entertainment",
+            href: "/industries#leisure-venues",
+            description: "Turn Visitor Experience Into a Competitive Advantage",
             longDescription:
-              "Transform leisure spaces with dynamic analytics that capture real-time crowd behavior, enabling optimized layouts, improved customer service, and more engaging experiences.",
-            caseExample: "Case example",
-            image:
-              "https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+              "Track crowd formation, attraction engagement, and movement between zones so operators can improve throughput, reduce friction, and design better experiences.",
+            caseExample: "View industry",
+            image: "/images/3d-digital-twin-map.png",
             icon: Film,
           },
           {
             label: "Airports",
-            href: "/industries/airports",
-            description: "Comprehensive Passenger Analytics",
+            href: "/industries#airports",
+            description: "Where Every Minute of Dwell Time Has a Price",
             longDescription:
-              "Improve airport operations by tracking real-time passenger flow, predicting congestion points, and streamlining services with AI-powered insights tailored for high-traffic environments.",
-            caseExample: "Case example",
-            image: "/images/unsplash/plane.jpg",
+              "Reveal passenger flow, queue pressure, and dwell-time opportunities across terminals using live analytics from existing CCTV infrastructure.",
+            caseExample: "View industry",
+            image: "/images/predictive-traffic-forecasting.png",
             icon: PlaneTakeoff,
           },
 
           {
-            label: "Smart Cities",
-            href: "/industries/smart-cities",
-            description: "Optimized Urban Insights",
+            label: "Supermarkets",
+            href: "/industries#supermarkets",
+            description: "Optimize the Space That Drives Margin",
             longDescription:
-              "Leverage data analytics to enhance urban planning, improve public safety, and optimize resource allocation in smart city initiatives.",
-            caseExample: "Case example",
-            image: "/images/unsplash/smartcity.jpg",
-            icon: Building, // Placeholder icon
+              "Measure aisle engagement, checkout flow, and promotional performance to improve basket size, labor planning, and floor productivity.",
+            caseExample: "View industry",
+            image: "/images/ai-object-detection.png",
+            icon: Store,
           },
           {
-            label: "Supermarkets",
-            href: "/industries/supermarkets",
-            description: "Streamlined In-Store Analytics",
+            label: "Out-of-Home Media",
+            href: "/industries#dooh-media",
+            description: "Sell Audiences, Not Screens",
             longDescription:
-              "Harness real-time data to analyze shopper behavior, optimize product placements, and manage staffing effectively, ensuring enhanced customer satisfaction and operational efficiency.",
-            caseExample: "Case example",
-            image: "/images/unsplash/stand.jpg",
-            icon: Store,
+              "Provide advertisers with verified impression counts, demographic audience profiles, and campaign attribution data that supports premium media sales.",
+            caseExample: "View industry",
+            image: "/images/live-performance-gauges.png",
+            icon: Building,
           },
           // {
           //   label: "Public Transportation",
@@ -217,27 +220,43 @@ export const navigation: NavSection[] = [
         ],
       },
       {
-        title: "AI in Action",
+        title: "By Team",
         links: [
           {
-            label: "Live Footfall Analytics",
-            href: "/use-cases#live-footfall",
+            label: "Leasing Management",
+            href: "/use-cases#leasing-management",
+            description: "Negotiate From a Position of Proof",
           },
           {
-            label: "Demographics Segmentation",
-            href: "/use-cases#demographics",
+            label: "Asset Management",
+            href: "/use-cases#asset-management",
+            description: "Manage Portfolio Performance With Confidence",
           },
           {
-            label: "Occupancy Management",
-            href: "/use-cases#occupancy",
+            label: "Center Management",
+            href: "/use-cases#center-management",
+            description: "Run a Tighter, Safer Operation Every Day",
           },
           {
-            label: "Journey Tracking",
-            href: "/use-cases#journey-tracking",
+            label: "Retail Management",
+            href: "/use-cases#retail-management",
+            description: "Turn Visitor Data Into Store Performance",
           },
           {
-            label: "Layout Optimization",
-            href: "/use-cases#layout-optimization",
+            label: "Marketing & Communication",
+            href: "/use-cases#marketing-communication",
+            description: "Prove That Your Campaigns Drive Real Foot Traffic",
+          },
+          {
+            label: "People Planning & Staffing",
+            href: "/use-cases#people-planning",
+            description:
+              "Put the Right People in the Right Place at the Right Time",
+          },
+          {
+            label: "Stakeholder & Investor Reporting",
+            href: "/use-cases#stakeholder-management",
+            description: "Share Credible Data With the People Who Need It",
           },
         ],
       },
@@ -311,7 +330,7 @@ export const solutions =
       navigation
         .find((section) => section.label === "Product")
         ?.sublinkGroups.find((group) => group.title === "Platform Ecosystem")
-        ?.links.filter((link) => link.description) || []
+        ?.links.filter((link) => link.description) || [],
     ) || [];
 
 // Helper to flatten specific groups for the /industries page

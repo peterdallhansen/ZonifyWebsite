@@ -1,147 +1,177 @@
 import React from "react";
 import Image from "next/image";
 import { Metadata } from "next";
-import AnalyticsTeaser from "@/components/Sections/analytics-teaser";
-
 export const metadata: Metadata = {
   title: "Use Cases | Zonify.ai",
-  description: "Discover how Zonify transforms physical spaces into actionable intelligence.",
+  description:
+    "See how every team in your organization can use spatial intelligence to make better decisions.",
 };
 
 const useCasesData = [
   {
-    id: "live-footfall",
-    title: "Live Footfall Analytics & Traffic Patterns",
-    subtitle: "See Every Footstep, Instantly",
-    description: "Gain real-time visibility into how many visitors are in your space at any given moment. Understand entry rates, exit rates, and current occupancy with 99% accuracy.",
+    id: "leasing-management",
+    title: "Leasing Management",
+    subtitle: "Negotiate From a Position of Proof",
+    description:
+      "Give your leasing team hard evidence for every conversation. Know which zones command premium footfall, which anchor tenants drive cross-visits to neighboring units, and which spaces are underperforming relative to their rent. Replace gut feel with data that holds up in a room.",
     benefits: [
-      "Track current occupancy",
-      "Monitor peak hours",
-      "Analyze historical footfall context"
+      "Zone-level footfall and dwell-time valuation",
+      "Anchor tenant influence and cross-visitation mapping",
+      "Occupancy benchmarking across your portfolio",
     ],
-    image: "/images/cloud-infrastructure-node.png", // Using existing placeholder from UseCases.tsx
-    imageAlt: "Live Footfall Analytics Dashboard",
+    image: "/images/unsplash/contract.jpg",
+    imageAlt: "Leasing performance dashboard",
   },
   {
-    id: "demographics",
-    title: "Demographics & Audience Segmentation",
-    subtitle: "Understand Who Visits — and Why",
-    description: "Go beyond simple counting. Segment your visitors by age, gender, and group size to uncover valuable behavioral patterns, allowing you to tailor experiences and marketing campaigns.",
+    id: "asset-management",
+    title: "Asset Management",
+    subtitle: "Manage Portfolio Performance With Confidence",
+    description:
+      "Move beyond lagging financial indicators. Track visitor behavior across your entire asset portfolio in real time, benchmark sites against each other, and identify where operational or commercial changes will have the most impact on long-term asset value.",
     benefits: [
-      "Age & Gender breakdown",
-      "Group size analysis",
-      "100% GDPR-compliant, anonymized data"
+      "Portfolio-wide footfall benchmarking",
+      "Site-level performance comparison",
+      "Historical trend analysis for asset reporting",
     ],
-    image: "/images/ai-object-detection.png",
-    imageAlt: "Demographic Segmentation Analysis",
+    image: "/images/unsplash/city.jpg",
+    imageAlt: "Portfolio analytics overview",
   },
   {
-    id: "occupancy",
-    title: "Occupancy & Crowd Management",
-    subtitle: "Ensure Safety and Comfort in Real Time",
-    description: "Accurately manage risks ranging from unauthorized access to overcrowding, both indoors and outdoors. Improve throughput in queueing so visitors spend more time engaging rather than waiting.",
+    id: "center-management",
+    title: "Center Management",
+    subtitle: "Run a Tighter, Safer Operation Every Day",
+    description:
+      "Keep a live pulse on what is happening across your entire venue. Monitor occupancy by zone, detect crowd build-ups before they become problems, and make staffing and operational decisions based on what is actually happening — not what happened yesterday.",
     benefits: [
-      "Queue length monitoring",
-      "Bottleneck identification",
-      "Automated alerts for capacity limits"
+      "Real-time zone occupancy and crowd alerts",
+      "Queue and bottleneck detection",
+      "Operational dashboards for on-the-ground teams",
     ],
-    image: "/images/tenant-occupancy-map.png",
-    imageAlt: "Crowd Management Interface",
+    image: "/images/unsplash/center3.jpg",
+    imageAlt: "Live center management dashboard",
   },
   {
-    id: "journey-tracking",
-    title: "Journey Tracking & Cross-Visitation",
-    subtitle: "Track the Complete Visitor Journey",
-    description: "Follow the full path of visitors from entry to exit. Understand how different stores or zones drive traffic to others, and identify stand-alone destinations within your venue.",
+    id: "retail-management",
+    title: "Retail Management",
+    subtitle: "Turn Visitor Data Into Store Performance",
+    description:
+      "Connect footfall with sales data to reveal your true conversion rate. Understand which displays and layouts drive engagement, where visitors drop off before purchasing, and how queue lengths are affecting revenue — at every location in your network.",
     benefits: [
-      "Path-to-purchase visualization",
-      "Cross-shopping insights",
-      "Visit duration metrics"
+      "Footfall-to-sales conversion tracking",
+      "Display and layout engagement analysis",
+      "Queue impact on sales performance",
     ],
-    image: "/images/3d-digital-twin-map.png",
-    imageAlt: "3D Journey Tracking View",
+    image: "/images/unsplash/browsing.jpg",
+    imageAlt: "Retail conversion analytics",
   },
   {
-    id: "layout-optimization",
-    title: "Layout Optimization & Heatmaps",
-    subtitle: "Visualize Engagement to Maximize Value",
-    description: "See exactly where people spend the most time. Heatmaps reveal visitor hotspots and spatial flow, empowering you to optimize layouts, justify rents, and plan infrastructure confidently.",
+    id: "marketing-communication",
+    title: "Marketing & Communication",
+    subtitle: "Prove That Your Campaigns Drive Real Foot Traffic",
+    description:
+      "Stop reporting impressions and start reporting outcomes. Measure the before-and-after footfall impact of every campaign, event, and activation. Know which demographic groups responded, which zones benefited, and what is actually worth repeating.",
     benefits: [
-      "Dwell-time analysis",
-      "Zone engagement scoring",
-      "Data-backed layout adjustments"
+      "Campaign footfall attribution",
+      "Demographic audience segmentation",
+      "Event and activation impact measurement",
     ],
-    image: "/images/integration-change-management.png",
-    imageAlt: "Layout Optimization Heatmap",
-  }
+    image: "/images/unsplash/marketing.jpg",
+    imageAlt: "Marketing campaign footfall impact",
+  },
+  {
+    id: "people-planning",
+    title: "People Planning & Staffing",
+    subtitle: "Put the Right People in the Right Place at the Right Time",
+    description:
+      "Use predictive traffic forecasting to plan rosters before peak hours arrive. Identify which zones are understaffed during high-traffic windows and which are overstaffed during quiet periods. Reduce waste and improve service quality at the same time.",
+    benefits: [
+      "Predictive footfall forecasting for roster planning",
+      "Zone-level staffing gap identification",
+      "Peak hour and seasonal demand modelling",
+    ],
+    image: "/images/unsplash/staff.jpg",
+    imageAlt: "Staffing and traffic forecasting",
+  },
+  {
+    id: "stakeholder-management",
+    title: "Stakeholder & Investor Reporting",
+    subtitle: "Share Credible Data With the People Who Need It",
+    description:
+      "Deliver professional, automated reports to tenants, investors, and board stakeholders — built on verified spatial data rather than estimates. Scheduled reporting, role-based access, and natural-language BI mean the right people always have the right numbers.",
+    benefits: [
+      "Automated tenant and investor reporting",
+      "Role-based access for external stakeholders",
+      "Natural-language querying for non-technical audiences",
+    ],
+    image: "/images/unsplash/meeting.jpg",
+    imageAlt: "Stakeholder reporting suite",
+  },
 ];
 
 export default function UseCasesPage() {
   return (
-    <main className="min-h-screen bg-background antialiased w-full mx-auto flex flex-col items-center">
-      {/* Hero Section */}
-      <section className="w-full pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
-        <h1 className="text-4xl md:text-6xl font-medium mb-6 text-balance">
-          Transform Physical Spaces into Actionable Intelligence
-        </h1>
-        <p className="text-lg md:text-xl text-primary/70 max-w-3xl text-balance">
-          Discover how Zonify’s AI-powered spatial analytics empowers retail, smart cities, and airports to make data-driven decisions that elevate visitor experiences and drive revenue.
-        </p>
-      </section>
+    <main className="bg-white text-gray-800">
+      <div className="mx-auto grid max-w-[2000px] gap-16 px-5 md:px-8 pb-16">
+        {/* Hero */}
+        <section className="mt-40 md:mt-52 grid grid-cols-8 gap-4">
+          <div className="col-span-8 md:col-span-7">
+            <h1 className="text-4xl md:text-7xl font-medium leading-[1.05] tracking-[-0.03em]">
+              Built for every team that runs your space
+            </h1>
+          </div>
+        </section>
 
-      {/* Main Content Sections */}
-      <div className="w-full flex flex-col gap-24 md:gap-40 py-10">
-        {useCasesData.map((useCase, index) => {
-          const isEven = index % 2 === 0;
+        {/* Rows */}
+        <section>
+          <div className="grid grid-cols-8">
+            {useCasesData.map((useCase) => (
+              <div
+                key={useCase.id}
+                id={useCase.id}
+                className="col-span-8 grid grid-cols-subgrid gap-4 border-t border-gray-300 py-8 md:py-10 scroll-m-20"
+              >
+                {/* LEFT TEXT */}
+                <div className="col-span-full flex flex-col gap-4 md:col-span-4 xl:col-span-2">
+                  <h2 className="text-xl md:text-2xl font-medium">
+                    {useCase.title}
+                  </h2>
 
-          return (
-            <section
-              key={useCase.id}
-              id={useCase.id}
-              className="w-full max-w-7xl mx-auto px-6 scroll-mt-24"
-            >
-              <div className={`flex flex-col gap-12 lg:gap-20 items-center justify-between ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                {/* Text Content */}
-                <div className="w-full lg:w-1/2 flex flex-col gap-6">
-                  <div className="space-y-4">
-                    <h2 className="text-sm font-semibold tracking-wider uppercase text-primary/50">
-                      {useCase.subtitle}
-                    </h2>
-                    <h3 className="text-3xl md:text-5xl font-medium text-balance">
-                      {useCase.title}
-                    </h3>
-                  </div>
-                  <p className="text-lg text-primary/80 leading-relaxed">
+                  <p className="text-md text-gray-600 leading-relaxed">
                     {useCase.description}
                   </p>
-                  
-                  <ul className="space-y-3 mt-4">
-                    {useCase.benefits.map((benefit, bIndex) => (
-                      <li key={bIndex} className="flex items-center gap-3 text-primary/80">
-                         <div className="w-1.5 h-1.5 rounded-full bg-black shrink-0 relative top-[1px]" />
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+
+                  <a
+                    href={`#${useCase.id}`}
+                    className="text-sm text-gray-900 flex items-center gap-1 group"
+                  >
+                    Case example
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </a>
                 </div>
 
-                {/* Image Wrap */}
-                <div className="w-full lg:w-1/2 relative h-[400px] md:h-[500px]  overflow-hidden flex items-center justify-center p-8">
-                  <Image
-                    src={useCase.image}
-                    alt={useCase.imageAlt}
-                    fill
-                    className="object-contain p-8"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                {/* RIGHT IMAGE */}
+                <div className="col-span-full md:col-span-4 md:col-start-5">
+                  <div className="grid gap-3 md:grid-cols-[1fr_auto]">
+                    <div className="w-full">
+                      <div className="relative w-full min-h-[320px] overflow-hidden rounded-lg  md:min-h-[520px]">
+                        <Image
+                          src={useCase.image}
+                          alt={useCase.imageAlt}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 767px) 100vw, 50vw"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </section>
-          );
-        })}
+            ))}
+          </div>
+        </section>
       </div>
-
-     
     </main>
   );
 }
