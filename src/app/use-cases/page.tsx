@@ -1,105 +1,150 @@
+import React from "react";
 import Image from "next/image";
 import { Metadata } from "next";
-
 export const metadata: Metadata = {
-  title: "Deployment | Zonify.ai",
+  title: "Use Cases | Zonify.ai",
   description:
-    "Deploy Zonify on your terms — in the cloud or on your own infrastructure.",
+    "See how every team in your organization can use spatial intelligence to make better decisions.",
 };
 
-const deploymentOptions = [
+const useCasesData = [
   {
-    id: "cloud",
-    label: "Cloud Processing",
-    tagline: "Up and running in days, not months.",
+    id: "leasing-management",
+    title: "Leasing Management",
+    subtitle: "Negotiate From a Position of Proof",
     description:
-      "Zonify manages the infrastructure. You get the insights. Our cloud deployment runs on top of your existing cameras with no servers to install, no hardware to maintain, and no IT overhead. Remote onboarding means your first site can be live within days — no on-site visit required.",
-    details: [
-      { label: "Deployment", value: "Days" },
-      { label: "Infrastructure", value: "None required" },
-      { label: "Maintenance", value: "Managed by Zonify" },
-      { label: "Updates", value: "Automatic" },
+      "Give your leasing team hard evidence for every conversation. Know which zones command premium footfall, which anchor tenants drive cross-visits to neighboring units, and which spaces are underperforming relative to their rent. Replace gut feel with data that holds up in a room.",
+    benefits: [
+      "Zone-level footfall and dwell-time valuation",
+      "Anchor tenant influence and cross-visitation mapping",
+      "Occupancy benchmarking across your portfolio",
     ],
-    href: "/deployment/cloud",
-    image: "/images/unsplash/cloud.webp",
-    imageAlt: "Cloud processing infrastructure",
+    image: "/images/unsplash/contract.jpg",
+    imageAlt: "Leasing performance dashboard",
   },
   {
-    id: "onprem",
-    label: "On-Premises Server",
-    tagline: "Full control. Data never leaves your walls.",
+    id: "asset-management",
+    title: "Asset Management",
+    subtitle: "Manage Portfolio Performance With Confidence",
     description:
-      "For organizations where data residency, air-gapped networks, or internal security policy require processing to happen on-site. Zonify deploys directly onto your own server infrastructure — same platform capabilities, same analytics quality, entirely within your environment.",
-    details: [
-      { label: "Deployment", value: "Coordinated with IT" },
-      { label: "Infrastructure", value: "Customer-provided" },
-      { label: "Maintenance", value: "Managed by your team" },
-      { label: "Updates", value: "Scheduled with your team" },
+      "Move beyond lagging financial indicators. Track visitor behavior across your entire asset portfolio in real time, benchmark sites against each other, and identify where operational or commercial changes will have the most impact on long-term asset value.",
+    benefits: [
+      "Portfolio-wide footfall benchmarking",
+      "Site-level performance comparison",
+      "Historical trend analysis for asset reporting",
     ],
-    href: "/deployment/onprem",
-    image: "/images/unsplash/server.webp",
-    imageAlt: "On-premises server deployment",
+    image: "/images/unsplash/city.jpg",
+    imageAlt: "Portfolio analytics overview",
+  },
+  {
+    id: "center-management",
+    title: "Center Management",
+    subtitle: "Run a Tighter, Safer Operation Every Day",
+    description:
+      "Keep a live pulse on what is happening across your entire venue. Monitor occupancy by zone, detect crowd build-ups before they become problems, and make staffing and operational decisions based on what is actually happening — not what happened yesterday.",
+    benefits: [
+      "Real-time zone occupancy and crowd alerts",
+      "Queue and bottleneck detection",
+      "Operational dashboards for on-the-ground teams",
+    ],
+    image: "/images/unsplash/center3.jpg",
+    imageAlt: "Live center management dashboard",
+  },
+  {
+    id: "retail-management",
+    title: "Retail Management",
+    subtitle: "Turn Visitor Data Into Store Performance",
+    description:
+      "Connect footfall with sales data to reveal your true conversion rate. Understand which displays and layouts drive engagement, where visitors drop off before purchasing, and how queue lengths are affecting revenue — at every location in your network.",
+    benefits: [
+      "Footfall-to-sales conversion tracking",
+      "Display and layout engagement analysis",
+      "Queue impact on sales performance",
+    ],
+    image: "/images/unsplash/browsing.jpg",
+    imageAlt: "Retail conversion analytics",
+  },
+  {
+    id: "marketing-communication",
+    title: "Marketing & Communication",
+    subtitle: "Prove That Your Campaigns Drive Real Foot Traffic",
+    description:
+      "Stop reporting impressions and start reporting outcomes. Measure the before-and-after footfall impact of every campaign, event, and activation. Know which demographic groups responded, which zones benefited, and what is actually worth repeating.",
+    benefits: [
+      "Campaign footfall attribution",
+      "Demographic audience segmentation",
+      "Event and activation impact measurement",
+    ],
+    image: "/images/unsplash/marketing.jpg",
+    imageAlt: "Marketing campaign footfall impact",
+  },
+  {
+    id: "people-planning",
+    title: "People Planning & Staffing",
+    subtitle: "Put the Right People in the Right Place at the Right Time",
+    description:
+      "Use predictive traffic forecasting to plan rosters before peak hours arrive. Identify which zones are understaffed during high-traffic windows and which are overstaffed during quiet periods. Reduce waste and improve service quality at the same time.",
+    benefits: [
+      "Predictive footfall forecasting for roster planning",
+      "Zone-level staffing gap identification",
+      "Peak hour and seasonal demand modelling",
+    ],
+    image: "/images/unsplash/staff.jpg",
+    imageAlt: "Staffing and traffic forecasting",
+  },
+  {
+    id: "stakeholder-management",
+    title: "Stakeholder & Investor Reporting",
+    subtitle: "Share Credible Data With the People Who Need It",
+    description:
+      "Deliver professional, automated reports to tenants, investors, and board stakeholders — built on verified spatial data rather than estimates. Scheduled reporting, role-based access, and natural-language BI mean the right people always have the right numbers.",
+    benefits: [
+      "Automated tenant and investor reporting",
+      "Role-based access for external stakeholders",
+      "Natural-language querying for non-technical audiences",
+    ],
+    image: "/images/unsplash/meeting.jpg",
+    imageAlt: "Stakeholder reporting suite",
   },
 ];
 
-export default function DeploymentPage() {
+export default function UseCasesPage() {
   return (
     <main className="bg-white text-gray-800">
       <div className="mx-auto grid max-w-[2000px] gap-16 px-5 md:px-8 pb-16">
         {/* Hero */}
         <section className="mt-40 md:mt-52 grid grid-cols-8 gap-4">
-          <div className="col-span-8 md:col-span-6">
+          <div className="col-span-8 md:col-span-7">
             <h1 className="text-4xl md:text-7xl font-medium leading-[1.05] tracking-[-0.03em]">
-              Deploy on your terms
+              Built for every team that runs your space
             </h1>
-            <p className="mt-6 text-lg text-gray-500 max-w-xl leading-relaxed">
-              Same platform. Same insights. Full control over where your data
-              lives.
-            </p>
           </div>
         </section>
 
         {/* Rows */}
         <section>
           <div className="grid grid-cols-8">
-            {deploymentOptions.map((option) => (
+            {useCasesData.map((useCase) => (
               <div
-                key={option.id}
-                id={option.id}
+                key={useCase.id}
+                id={useCase.id}
                 className="col-span-8 grid grid-cols-subgrid gap-4 border-t border-gray-300 py-8 md:py-10 scroll-m-20"
               >
                 {/* LEFT TEXT */}
                 <div className="col-span-full flex flex-col gap-4 md:col-span-4 xl:col-span-2">
-                  <p className="text-xs font-medium uppercase tracking-widest text-gray-400">
-                    {option.label}
-                  </p>
-
                   <h2 className="text-xl md:text-2xl font-medium">
-                    {option.tagline}
+                    {useCase.title}
                   </h2>
 
                   <p className="text-md text-gray-600 leading-relaxed">
-                    {option.description}
+                    {useCase.description}
                   </p>
 
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-3 border-t border-gray-100 pt-4">
-                    {option.details.map((detail) => (
-                      <div key={detail.label}>
-                        <p className="text-[11px] uppercase tracking-wide text-gray-400">
-                          {detail.label}
-                        </p>
-                        <p className="mt-0.5 text-sm font-medium text-gray-700">
-                          {detail.value}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
                   <a
-                    href={option.href}
-                    className="text-sm text-gray-900 flex items-center gap-1 group mt-1"
+                    href={`#${useCase.id}`}
+                    className="text-sm text-gray-900 flex items-center gap-1 group"
                   >
-                    Learn more
+                    Case example
                     <span className="transition-transform duration-300 group-hover:translate-x-1">
                       →
                     </span>
@@ -108,41 +153,22 @@ export default function DeploymentPage() {
 
                 {/* RIGHT IMAGE */}
                 <div className="col-span-full md:col-span-4 md:col-start-5">
-                  <div className="relative w-full min-h-[320px] overflow-hidden rounded-lg md:min-h-[520px]">
-                    <Image
-                      src={option.image}
-                      alt={option.imageAlt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 767px) 100vw, 50vw"
-                    />
+                  <div className="grid gap-3 md:grid-cols-[1fr_auto]">
+                    <div className="w-full">
+                      <div className="relative w-full min-h-[320px] overflow-hidden rounded-lg  md:min-h-[520px]">
+                        <Image
+                          src={useCase.image}
+                          alt={useCase.imageAlt}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 767px) 100vw, 50vw"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
-
-            {/* CTA row */}
-            <div className="col-span-8 grid grid-cols-subgrid gap-4 border-t border-gray-300 py-8 md:py-10">
-              <div className="col-span-full flex flex-col gap-4 md:col-span-4 xl:col-span-2">
-                <h2 className="text-xl md:text-2xl font-medium">
-                  Not sure which fits?
-                </h2>
-                <p className="text-md text-gray-600 leading-relaxed">
-                  Talk to our team — we'll help you find the right option before
-                  you commit to anything.
-                </p>
-
-                <a
-                  href="/contact"
-                  className="text-sm text-gray-900 flex items-center gap-1 group"
-                >
-                  Get in touch
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
           </div>
         </section>
       </div>

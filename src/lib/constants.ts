@@ -119,10 +119,10 @@ export const navigation: NavSection[] = [
             image: "/images/integration-change-management.png",
             imageClassName: "object-contain scale-[1.5] md:scale-[1]",
           },
-          { label: "Cloud Processing", href: "/deployment/cloud", icon: Cloud },
+          { label: "Cloud Processing", href: "/deployment#cloud", icon: Cloud },
           {
             label: "On-Premises Server",
-            href: "/deployment/onprem",
+            href: "/deployment#onprem",
             icon: Server,
           },
         ],

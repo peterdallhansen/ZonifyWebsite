@@ -12,7 +12,7 @@ const deploymentOptions = [
   {
     id: "cloud",
     label: "Cloud Processing",
-    href: "/deployment/cloud",
+    href: "/deployment#cloud",
     tagline: "Up and running in days, not months.",
     summary:
       "Zonify manages the infrastructure. You get the insights. Our cloud deployment runs on top of your existing cameras with no servers to install, no hardware to maintain, and no IT overhead. Remote onboarding means your first site can be live within days.",
@@ -43,7 +43,7 @@ const deploymentOptions = [
   {
     id: "onprem",
     label: "On-Premises Server",
-    href: "/deployment/onprem",
+    href: "/deployment#onprem",
     tagline: "Full control. Data never leaves your walls.",
     summary:
       "For organizations where data residency, air-gapped networks, or internal security policy require processing to happen on-site, Zonify deploys directly onto your own server infrastructure. Same platform capabilities, same analytics quality — on your terms.",
