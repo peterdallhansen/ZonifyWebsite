@@ -19,7 +19,7 @@ const useCasesData = [
       "Anchor tenant influence and cross-visitation mapping",
       "Occupancy benchmarking across your portfolio",
     ],
-    image: "/images/unsplash/contract.jpg",
+    image: "/images/unsplash/contract.webp",
     imageAlt: "Leasing performance dashboard",
   },
   {
@@ -33,7 +33,7 @@ const useCasesData = [
       "Site-level performance comparison",
       "Historical trend analysis for asset reporting",
     ],
-    image: "/images/unsplash/city.jpg",
+    image: "/images/unsplash/city.webp",
     imageAlt: "Portfolio analytics overview",
   },
   {
@@ -47,7 +47,7 @@ const useCasesData = [
       "Queue and bottleneck detection",
       "Operational dashboards for on-the-ground teams",
     ],
-    image: "/images/unsplash/center3.jpg",
+    image: "/images/unsplash/center3.webp",
     imageAlt: "Live center management dashboard",
   },
   {
@@ -61,7 +61,7 @@ const useCasesData = [
       "Display and layout engagement analysis",
       "Queue impact on sales performance",
     ],
-    image: "/images/unsplash/browsing.jpg",
+    image: "/images/unsplash/browsing.webp",
     imageAlt: "Retail conversion analytics",
   },
   {
@@ -75,7 +75,7 @@ const useCasesData = [
       "Demographic audience segmentation",
       "Event and activation impact measurement",
     ],
-    image: "/images/unsplash/marketing.jpg",
+    image: "/images/unsplash/marketing.webp",
     imageAlt: "Marketing campaign footfall impact",
   },
   {
@@ -89,7 +89,7 @@ const useCasesData = [
       "Zone-level staffing gap identification",
       "Peak hour and seasonal demand modelling",
     ],
-    image: "/images/unsplash/staff.jpg",
+    image: "/images/unsplash/staff.webp",
     imageAlt: "Staffing and traffic forecasting",
   },
   {
@@ -103,7 +103,7 @@ const useCasesData = [
       "Role-based access for external stakeholders",
       "Natural-language querying for non-technical audiences",
     ],
-    image: "/images/unsplash/meeting.jpg",
+    image: "/images/unsplash/meeting.webp",
     imageAlt: "Stakeholder reporting suite",
   },
 ];

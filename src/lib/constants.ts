@@ -204,7 +204,7 @@ export const navigation: NavSection[] = [
           //   longDescription:
           //     "Empower your transit network with actionable analytics that reveal rider behavior and service performance, enabling optimized scheduling, reduced wait times, and improved overall efficiency.",
           //   caseExample: "Case example",
-          //   image: "/images/unsplash/train.jpg",
+          //   image: "/images/unsplash/train.webp",
           //   icon: Train,
           // },
           // {

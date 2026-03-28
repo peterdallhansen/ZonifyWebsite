@@ -19,7 +19,7 @@ const researchPapers = [
       "Humans Without Humans: Leveraging Controllable Virtual Environments for Person Re-Identification Training",
     authors: "Peter Dall-Hansen",
     date: "November 16, 2025",
-    image: "/images/unsplash/center.jpg",
+    image: "/images/unsplash/center.webp",
     slug: "synthetic-data-reid",
     description:
       "Creating large-scale datasets for person re-identification using fully controllable virtual environments. A privacy-preserving alternative for scalable data creation without recording real individuals.",
