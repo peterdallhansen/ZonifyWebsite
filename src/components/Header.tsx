@@ -96,10 +96,10 @@ export default function Header() {
               height: getHeaderHeight(),
               backgroundColor:
                 isHovering && currentHoverData?.sublinkGroups
-                  ? "rgba(10,10,10,0.9)"
+                  ? "rgba(10,10,10,0.95)"
                   : atTop && isHome
                     ? "rgba(0,0,0,0)"
-                    : "rgba(10,10,10,0.9)",
+                    : "rgba(10,10,10,0.95)",
             }}
             exit={{ y: -100, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
