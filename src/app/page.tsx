@@ -3,7 +3,7 @@ import TenantAppTeaser from "@/components/Sections/tenant-app-teaser";
 import Hiring from "@/components/Sections/hiring";
 import { ArrowRight, LucidePause, LucidePlay } from "lucide-react";
 import { NewsGrid } from "./news/components/news-grid";
-import Main2 from "@/components/Sections/Main2";
+import Hero from "@/components/Sections/Hero";
 import { FeaturesSection } from "@/components/Sections/Features";
 import Tools from "@/components/Tools";
 import Offerings from "@/components/Offerings";
@@ -26,21 +26,21 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background antialiased w-full mx-auto flex flex-col items-center transition-colors duration-500">
-<Main2 />
+      <Hero />
 
-<div className="w-full mx-auto max-w-7xl px-6 md:px-12 mt-20">
+      <div className="w-full mx-auto max-w-7xl px-6 md:px-12 mt-20">
         <h2 className="text-4xl md:text-5xl font-medium text-center mb-6 text-balance">
           See Your Space Come to Life <br /> Powered by AI
         </h2>
-</div>
-<Offerings />
+      </div>
+      <Offerings />
 
-      <div className="w-full   my-20 mx-auto container  md:px-12">
+      <div className="w-full   my-20 mx-auto container px-4  md:px-12">
         <h2 className="text-4xl md:text-6xl font-medium text-center mb-8 text-balance">
           See how it works
         </h2>
 
-        <div className="w-full rounded-2xl h-auto relative">
+        <div className="w-full  rounded-2xl h-auto relative overflow-hidden max-h-[550px]">
           <video
             autoPlay
             muted
@@ -50,12 +50,14 @@ export default function Home() {
             className="w-full rounded-2xl h-auto"
             aria-label="Product demonstration video"
           >
-            <source src="/videos/hero.webm" type="video/webm" />
-            <source src="/videos/video_1773312921087.mp4" type="video/mp4" />
+            <source src="/videos/video.webm" type="video/webm" />
+            <source src="/videos/video.webm" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           {/* DIAGONAL MIDDLE DEMO TEXT FILLING ENTIRE VIDEO */}
-          <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-15deg] text-white/40 text-[7.5vw] font-medium text-white">PLACEHOLDER</p>
+          <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-15deg] text-white/40 text-[7.5vw] font-medium text-white">
+            PLACEHOLDER
+          </p>
           <button
             className="absolute bottom-4 right-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full"
             onClick={toggleVideoPlayback}
@@ -76,7 +78,7 @@ export default function Home() {
 
       <FeaturesSection />
 
-<div className="mx-auto container px-6 py-16 md:px-12 md:py-20">
+      <div className="mx-auto container px-6 py-16 md:px-12 md:py-20">
         <div className="flex flex-row justify-between w-full items-center mb-6">
           <h2 className="text-2xl font-medium">Latest News</h2>
           <a
@@ -90,7 +92,7 @@ export default function Home() {
         <NewsGrid max={3} />
       </div>
 
-<Hiring />
+      <Hiring />
     </main>
   );
 }

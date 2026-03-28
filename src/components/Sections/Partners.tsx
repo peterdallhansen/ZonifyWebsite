@@ -19,8 +19,9 @@ import RenaultLogo from "@/assets/partners/renault.svg";
 export default function Partners() {
   const companies = [
     { Logo: BytorvHorsensLogo, alt: "Bytorv Horsens" },
-    { Logo: MicrosoftLogo, alt: "Microsoft" },
-    { Logo: NvidiaLogo, alt: "Nvidia" },
+    // { Logo: MicrosoftLogo, alt: "Microsoft" },
+    // { Logo: NvidiaLogo, alt: "Nvidia" },
+    {Logo: MagasinLogo, alt: "Magasin"},
     // { Logo: InnofactorLogo, alt: "Innofactor" },
     // { Logo: DTUSkylabLogo, alt: "DTU Skylab" },
     { Logo: SSCPLogo, alt: "SSCP" },

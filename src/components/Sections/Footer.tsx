@@ -10,7 +10,7 @@ import {
   User,
 } from "lucide-react";
 import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
 import Logo from "../Logo";
 import { ResearchSection } from "@/app/about/Components/research-section";
 import { navigation } from "@/lib/constants";
@@ -22,6 +22,7 @@ const socialLinks = [
     label: "LinkedIn",
     Icon: FaLinkedin,
   },
+
   // Add more social links here if needed
 ];
 
@@ -34,7 +35,26 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Company Logo */}
           <div className="md:col-span-1">
-            <Logo width={240} height={100} />
+            <div className="mb-6 sm:mb-8 lg:mb-12 flex flex-col gap-6 sm:gap-8 w-full">
+              <Logo width={240} height={100} />
+
+              <div className="text-sm">
+                <p className="text-muted-foreground mb-2">
+                  <span>Contact</span>
+                </p>
+                <p className="mb-1">contact@zonify.ai</p>
+                <p>+45 60 10 86 87</p>
+              </div>
+              <div className="text-sm">
+                <p className="text-muted-foreground mb-2">
+                  <span>Location</span>
+                </p>
+                <p>Lyngby</p>
+                <p>Hollandsvej 12</p>
+                <p>2800 Kgs. Lyngby</p>
+                <p>Denmark</p>
+              </div>
+            </div>
           </div>
 
           {/* Navigation Sections */}
@@ -47,14 +67,17 @@ export function Footer() {
                 {section.sublinkGroups.map((group) => (
                   <div key={group.title} className="space-y-3">
                     {group.title && (
-                      <h4 className="text-xs font-semibold text-primary/40 uppercase tracking-wide">
+                      <h4 className="text-sm text-muted-foreground ">
                         {group.title}
                       </h4>
                     )}
                     <ul className="space-y-2">
                       {group.links.map((link) => (
                         <li key={link.label}>
-                          <Link href={link.href} className="text-sm text-primary/60 hover:text-primary transition-colors block">
+                          <Link
+                            href={link.href}
+                            className="text-sm  hover:text-primary transition-colors block"
+                          >
                             {link.label}
                           </Link>
                         </li>

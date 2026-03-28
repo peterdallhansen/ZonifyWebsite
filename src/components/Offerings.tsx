@@ -6,12 +6,12 @@ import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import Image, { type StaticImageData } from "next/image";
 
-import frame102 from "@/public/images/vision-ai-dashboard.png";
-import frame103 from "@/public/images/spatial-intelligence-map.png";
-import reportImage from "@/public/images/automated-reporting-suite.png";
-import customerJourneyImage from "@/public/images/customer-journey-analytics.png";
+import MeasureZoneOverlay from "@/public/images/vision-ai-dashboard.png";
+import Map3DCustomerPath from "@/public/images/spatial-intelligence-map.png";
+import TenantLeaseReport from "@/public/images/automated-reporting-suite.png";
+import CustomerJourneySankeyChart from "@/public/images/customer-journey-analytics.png";
 
-import searchAnim from "@/public/animations/SearchAnim.json";
+import DataAssistantAgent from "@/public/animations/SearchAnim3.json";
 import researchAnim2 from "@/public/animations/Research3.json";
 import loadingResearchAnim from "@/public/animations/LoadingResearch.json";
 import widgetAnim from "@/public/animations/Widget2.json";
@@ -29,55 +29,36 @@ type Offering = {
 const keyPoints: Offering[] = [
   {
     id: "analytics-2",
-    title:
-      "Unlock real-time visitor analytics from your existing camera infrastructure",
-    image: frame103,
-    alt: "Standard surveillance camera with AI analytics overlay",
+    title: "See how visitors move through every zone — in real time",
+    image: Map3DCustomerPath,
+    alt: "3D spatial intelligence map showing visitor flow across zones",
   },
   {
     id: "analytics-1",
     title:
-      "Unlock real-time visitor analytics from your existing camera infrastructure",
-    image: frame102,
-    alt: "Standard surveillance camera with AI analytics overlay",
+      "Measure dwell time, footfall, and engagement across any defined area",
+    image: MeasureZoneOverlay,
+    alt: "AI-powered zone analytics dashboard with live visitor data",
   },
-  
- 
-    {
+  {
     id: "customer-journey",
-    title: "Follow every customer journey to discover cross-shopping patterns",
-    image: customerJourneyImage,
-    alt: "Customer journey tracking and cross-shopping analysis",
+    title:
+      "Track how shoppers move between stores to reveal cross-shopping patterns",
+    image: CustomerJourneySankeyChart,
+    alt: "Sankey chart showing customer journey and cross-shopping flows",
   },
   {
     id: "twin-1",
-    title: "See every square foot in real-time with a living digital twin",
-    image: reportImage,
-    alt: "3D digital twin simulating physical space traffic",
+    title:
+      "Deliver automated performance reports to tenants, teams, and leadership",
+    image: TenantLeaseReport,
+    alt: "Automated reporting suite with tenant and operational insights",
   },
-   {
+  {
     id: "journey-1",
-    title: "Follow every customer journey to discover cross-shopping patterns",
-    animation: searchAnim,
-    alt: "Customer journey tracking and cross-shopping analysis",
-  },
-  {
-    id: "journey-2",
-    title: "Follow every customer journey to discover cross-shopping patterns",
-    animation: researchAnim2,
-    alt: "Customer journey tracking and cross-shopping analysis",
-  },
-  {
-    id: "twin-2",
-    title: "See every square foot in real-time with a living digital twin",
-    animation: loadingResearchAnim,
-    alt: "3D digital twin simulating physical space traffic",
-  },
-  {
-    id: "gdpr-1",
-    title: "Gather demographic insights safely with 100% GDPR compliance",
-    animation: widgetAnim,
-    alt: "GDPR-compliant demographic breakdown dashboard",
+    title: "Ask any question about your space — and get an instant answer",
+    animation: DataAssistantAgent,
+    alt: "AI data assistant responding to natural language spatial queries",
   },
 ];
 
@@ -165,16 +146,16 @@ export default function Offerings() {
   }, [activeIndex, slides.length, scrollToSlide]);
 
   return (
-    <section className="relative w-full max-w-screen mx-auto px-4 my-20">
+    <section className="relative mx-auto my-20 w-full max-w-screen px-4">
       <div
-        className="overflow-x-auto scrollbar-hide snap-x snap-mandatory"
         ref={scrollRef}
+        className="overflow-x-auto scrollbar-hide snap-x snap-mandatory"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         aria-label="Offerings carousel"
       >
         <div
-          className="flex gap-5 snap-x snap-mandatory scrollbar-hide mx-[140px]"
-          style={{ paddingLeft: "calc((100% - 1500px)/2)" }}
+          className="flex items-stretch gap-4 snap-x snap-mandatory md:mx-[140px] md:gap-5"
+          style={{ paddingLeft: "max(0px, calc((100% - 1500px) / 2))" }}
         >
           {slides.map((offering, index) => {
             const isLast = index === slides.length - 1;
@@ -188,38 +169,41 @@ export default function Offerings() {
                 ref={(el) => {
                   slideRefs.current[index] = el;
                 }}
-                className="flex flex-row justify-between items-center gap-4 shrink-0"
+                className="flex shrink-0 self-stretch gap-4"
               >
-                <div className="rounded-lg overflow-hidden min-w-full md:min-w-[1120px] flex flex-col space-y-8 snap-center">
-                  <h3 className="max-w-2xl text-3xl text-balance z-10 leading-tight">
+                <div className="flex h-full w-[calc(100vw-4rem)] max-w-full flex-col justify-end snap-center md:w-[1120px] md:min-w-[1120px]">
+                  <h3 className="max-w-2xl text-2xl leading-tight text-balance md:text-3xl">
                     {offering.title}
                   </h3>
 
-                  <div className="h-[560px] relative rounded-xl overflow-hidden flex items-center justify-center">
+                  <div className="relative mt-4 flex h-[200px] w-full items-center justify-center overflow-hidden rounded-xl bg-[url('/images/showcase-background-gray.jpg')] bg-cover bg-center sm:h-[320px] md:mt-8 md:h-[560px]">
                     {offering.animation ? (
                       <Lottie
                         animationData={offering.animation}
-                        loop={true}
-                        autoplay={true}
-                        className="h-full w-auto rounded-xl bg-[url('/images/showcase-background-gray.jpg')]"
+                        loop
+                        autoplay
+                        className="h-full w-full max-h-full max-w-full rounded-xl"
                         aria-label={offering.alt}
                         role="img"
                       />
                     ) : offering.image ? (
-                      <Image
-                        src={offering.image}
-                        alt={offering.alt}
-                        priority={index < 2}
-                        sizes="(max-width: 768px) 100vw, 1120px"
-                        className="h-full w-auto object-contain rounded-xl"
-                      />
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={offering.image}
+                          alt={offering.alt}
+                          priority={index < 2}
+                          fill
+                          sizes="(max-width: 768px) calc(100vw - 2rem), 1120px"
+                          className="rounded-xl object-contain"
+                        />
+                      </div>
                     ) : null}
                   </div>
                 </div>
 
                 <button
                   type="button"
-                  className="bg-white rounded-full p-2 border focus:outline-none"
+                  className="hidden shrink-0 self-center rounded-full border bg-white p-2 focus:outline-none md:block"
                   onClick={
                     showBack
                       ? isLast

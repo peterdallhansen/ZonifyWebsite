@@ -10,9 +10,11 @@ import GoogleAnalytics from "@/components/google-analytics";
 import CookieBanner from "@/components/CookieBanner";
 import SmoothScroll from "@/components/SmoothScroll";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL 
-  ? process.env.NEXT_PUBLIC_BASE_URL 
-  : (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://zonify.ai');
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+  ? process.env.NEXT_PUBLIC_BASE_URL
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://zonify.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -20,7 +22,12 @@ export const metadata: Metadata = {
     default: "Zonify.ai | AI-Driven Insights from Every Footstep",
     template: "%s | Zonify.ai",
   },
-  description: `Our cloud-based AI solution enables 2D cameras to deliver real-time analytics, helping companies understand visitor behavior, optimize traffic, and enhance everyday operations.`,
+  description: `
+  Zonify.ai is an AI-powered spatial analytics company. 
+  We help operators of physical spaces turn their existing camera infrastructure into real-time intelligence 
+  — revealing how visitors move, dwell, and engage across every square foot. 
+  Our team combines deep computer vision research with practical retail and venue expertise to deliver privacy-first insights that drive smarter decisions on layout, leasing, staffing, and operations. Contact us to learn more.
+  `,
   twitter: {
     card: "summary_large_image",
   },
@@ -60,13 +67,13 @@ export default function RootLayout({
         />
       </head>
       <body className={`  antialiased   p-0   `} suppressHydrationWarning>
-          <Header />
+        <Header />
 
-          <Suspense fallback={null}>
-            <GoogleAnalytics GA_MEASUREMENT_ID="G-QED3S3G00L" />
-          </Suspense>
-          <SmoothScroll>{children}</SmoothScroll>
-          <Footer />
+        <Suspense fallback={null}>
+          <GoogleAnalytics GA_MEASUREMENT_ID="G-QED3S3G00L" />
+        </Suspense>
+        <SmoothScroll>{children}</SmoothScroll>
+        <Footer />
       </body>
     </html>
   );

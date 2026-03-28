@@ -22,7 +22,7 @@ const toolsData: Record<string, ToolFeature> = {
     description:
       "Go beyond raw counting. Our AI securely processes video streams to provide aggregated reports on visitor age, gender, and demographics. Get actionable insights while remaining 100% GDPR compliant.",
     filters: ["Age Breakdown", "Gender Split", "Return Rate"],
-   
+
     animationSrc: "/animations/Widget.json",
   },
   "Zone Heatmaps": {
@@ -39,7 +39,7 @@ const toolsData: Record<string, ToolFeature> = {
     description:
       "Track exactly how long people spend at specific displays, aisles, or storefronts. Correlate dwell time with sales data to measure the effectiveness of your spatial strategy.",
     filters: ["Interaction Time", "Average Stay", "Bouncers"],
-   animationSrc: "/animations/Research3.json",
+    animationSrc: "/animations/Research3.json",
   },
   "Cross-Visit Tracking": {
     title: "Cross-Visit Tracking",
@@ -110,7 +110,6 @@ const toolsData: Record<string, ToolFeature> = {
 };
 
 const tabs = Object.keys(toolsData);
-
 export default function Tools() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
@@ -118,26 +117,12 @@ export default function Tools() {
   const [activeFilter, setActiveFilter] = useState(currentTool.filters[0]);
   const [animationData, setAnimationData] = useState<any>(null);
 
-  // Auto switch the active tab every 6 seconds.
-  // The dependency on activeTab ensures the timer resets when manually clicked.
-  //   useEffect(() => {
-  //     const timer = setInterval(() => {
-  //       setActiveTab((current) => {
-  //         const currentIndex = tabs.indexOf(current)
-  //         return tabs[(currentIndex + 1) % tabs.length]
-  //       })
-  //     }, 6000)
-
-  //     return () => clearInterval(timer)
-  //   }, [activeTab])
-
   useEffect(() => {
     setActiveFilter(toolsData[activeTab].filters[0]);
 
-    // Fetch lottie data if present
     const animSrc = toolsData[activeTab].animationSrc;
     if (animSrc) {
-      setAnimationData(null); // reset while loading
+      setAnimationData(null);
       fetch(animSrc)
         .then((res) => res.json())
         .then((data) => setAnimationData(data))
@@ -148,42 +133,64 @@ export default function Tools() {
   }, [activeTab]);
 
   return (
-    <div className="">
+    <div className="w-full overflow-x-hidden">
       {/* Hero Section */}
       <header className="px-6 py-16 text-center">
         <h2 className="text-5xl md:text-6xl font-medium tracking-tight text-balance mb-4">
-          Deep spatial insights.
+          One platform. Every team covered.
         </h2>
         <p className="text-xl md:text-2xl font-normal tracking-tight text-balance text-muted-foreground/80 max-w-3xl mx-auto">
-          Powered by your existing cameras.
+          From leasing and operations to marketing and security — built for the
+          decisions that run your space.
         </p>
       </header>
 
       {/* Navigation Tabs */}
-      <nav className="px-6 mb-16">
-        <div className="flex items-center justify-center gap-2 flex-wrap max-w-7xl mx-auto">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-3 py-1 m-1 text-base rounded-md transition-colors ${
-                activeTab === tab
-                  ? "font-semibold text-foreground bg-primary/10  "
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+      <nav className="mb-16 w-full max-w-full overflow-hidden">
+        <div className="mx-auto w-full max-w-7xl min-w-0">
+          {/* Mobile */}
+          <div className="md:hidden w-full max-w-full overflow-x-auto overflow-y-hidden scrollbar-hide">
+            <div className="flex min-w-max gap-2 px-6 pb-2">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`flex-none whitespace-nowrap rounded-md px-3 py-1 text-base transition-colors ${
+                    activeTab === tab
+                      ? "bg-primary/10 font-semibold text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop */}
+          <div className="hidden md:flex md:flex-wrap md:items-center md:justify-center md:gap-2 md:px-6">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`rounded-md px-3 py-1 text-base transition-colors ${
+                  activeTab === tab
+                    ? "bg-primary/10 font-semibold text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
       </nav>
 
       {/* Main Content */}
       <main className="px-6 pb-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column - Text Content */}
-            <div className="space-y-6">
+        <div className="max-w-7xl mx-auto min-w-0">
+          <div className="grid lg:grid-cols-2 gap-12 items-start min-w-0">
+            <div className="space-y-6 min-w-0">
               <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-balance">
                 {currentTool.headline}
               </h2>
@@ -192,12 +199,10 @@ export default function Tools() {
                 {currentTool.description}
               </p>
 
-              <div className="flex gap-3 pt-4 flex-wrap">
+              <div className="flex gap-3 pt-4 flex-wrap min-w-0">
                 {currentTool.filters.map((filter) => (
                   <div
                     key={filter}
-                    // variant={activeFilter === filter ? 'default' : 'outline'}
-                    // size="sm"
                     onClick={() => setActiveFilter(filter)}
                     className="rounded-full border px-3 py-1 text-sm"
                   >
@@ -207,34 +212,30 @@ export default function Tools() {
               </div>
             </div>
 
-            {/* Right Column - Split Image / Animation */}
-            <div className="relative aspect-[4/3] overflow-hidden ">
-              <div className="h-full flex items-center justify-center relative">
+            <div className="relative md:aspect-[4/3] overflow-hidden min-w-0">
+              <div className="relative flex h-full items-center justify-center">
                 {currentTool.animationSrc && animationData ? (
                   <Lottie
                     animationData={animationData}
-                    loop={true}
-                    autoplay={true}
-                    className="w-full h-full object-contain"
+                    loop
+                    autoplay
+                    className="h-full w-full object-contain"
                     role="img"
                   />
                 ) : (
-                  <>
-                    {currentTool.imageSrc && (
-                      <Image
-                        src={currentTool.imageSrc}
-                        alt={currentTool.headline}
-                        fill
-                        className="object-contain opacity-80"
-                      />
-                    )}
-                  </>
+                  currentTool.imageSrc && (
+                    <Image
+                      src={currentTool.imageSrc}
+                      alt={currentTool.headline}
+                      fill
+                      className="object-contain opacity-80"
+                    />
+                  )
                 )}
 
-                {/* Fallback graphic if media is missing */}
                 {!currentTool.animationSrc && !currentTool.imageSrc && (
                   <div className="absolute inset-0 flex items-center justify-center -z-10 bg-background/5">
-                    <div className="text-muted-foreground/60 text-center space-y-3 p-6 border border-dashed border-muted-foreground/20 rounded-lg">
+                    <div className="rounded-lg border border-dashed border-muted-foreground/20 p-6 text-center space-y-3 text-muted-foreground/60">
                       <p className="font-mono text-xs uppercase tracking-widest">
                         {activeFilter}
                       </p>

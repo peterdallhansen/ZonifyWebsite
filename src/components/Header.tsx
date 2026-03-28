@@ -19,32 +19,31 @@ export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [atTop, setAtTop] = useState(true);
-  
+
   const lastScrollY = useRef(0);
   const atTopTimeout = useRef<number | null>(null);
 
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   let hoverTimeout = useRef<number | null>(null);
 
-  const currentHoverData = navigation.find((link) => link.label === hoveredLink);
+  const currentHoverData = navigation.find(
+    (link) => link.label === hoveredLink,
+  );
   const isHovering = hoveredLink !== null;
 
   // Scroll Listener
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
-      
+
       // Hide header on scroll down, show on scroll up
       if (y > lastScrollY.current && y > 50) setShowHeader(false);
       else if (y < lastScrollY.current) setShowHeader(true);
       lastScrollY.current = y;
 
       // Handle top gradient/transparency
-      const newAtTop = y < 10;
-      if (newAtTop !== atTop) {
-        if (atTopTimeout.current) clearTimeout(atTopTimeout.current);
-        atTopTimeout.current = window.setTimeout(() => setAtTop(newAtTop), 150);
-      }
+      const newAtTop = y <= 1;
+      setAtTop(newAtTop);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -85,23 +84,28 @@ export default function Header() {
           <motion.header
             key="site-header"
             className="fixed top-0 z-50 w-screen px-3 overflow-hidden text-white"
-            initial={{ y: -100, opacity: 0, height: 60, backgroundColor: "rgba(0,0,0,0)" }}
+            initial={{
+              y: -100,
+              opacity: 0,
+              height: 60,
+              backgroundColor: "rgba(0,0,0,0)",
+            }}
             animate={{
               y: 0,
               opacity: 1,
               height: getHeaderHeight(),
-              backgroundColor: isHovering && currentHoverData?.sublinkGroups
-                ? "rgba(10,10,10,0.9)"
-                : atTop && isHome
-                  ? "rgba(0,0,0,0)"
-                  : "#181818",
+              backgroundColor:
+                isHovering && currentHoverData?.sublinkGroups
+                  ? "rgba(10,10,10,0.9)"
+                  : atTop && isHome
+                    ? "rgba(0,0,0,0)"
+                    : "rgba(10,10,10,0.9)",
             }}
             exit={{ y: -100, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
             onMouseLeave={onHoverEnd}
           >
-            <div className="grid grid-cols-2 md:grid-cols-3 items-center mx-auto px-4 h-[60px]">
-              
+            <div className="grid grid-cols-2 md:grid-cols-3 items-center mx-auto px-4 h-[64px]">
               {/* Left: Logo */}
               <div className="justify-self-start">
                 <Logo variant="dark" />
@@ -119,12 +123,12 @@ export default function Header() {
                       <Link
                         href={link.href || "#"}
                         className={cn(
-                          "text-sm transition-colors",
+                          "text-md transition-colors tracking-wide",
                           isHovering
                             ? hoveredLink === link.label
                               ? "text-white"
                               : "text-white/60 hover:text-white"
-                            : "text-white hover:text-white/80"
+                            : "text-white hover:text-white/80",
                         )}
                       >
                         {link.label}
@@ -141,7 +145,10 @@ export default function Header() {
                 ) : (
                   <div className="flex items-center h-[60px]">
                     <Link href="/contact">
-                      <Button variant="link" className="text-white hover:text-white/80">
+                      <Button
+                        variant="link"
+                        className="text-white hover:text-white/80"
+                      >
                         Contact
                       </Button>
                     </Link>
