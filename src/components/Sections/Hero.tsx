@@ -51,7 +51,7 @@ function Hero() {
             <source src="/videos/video_1773312921087.mp4" type="video/mp4" />
           </video> */}
           <Image
-            src="/images/bg.png"
+            src="/images/black-background.webp"
             alt="Hero Image"
             fill
             priority
